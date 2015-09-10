@@ -8,20 +8,24 @@
 
 import UIKit
 
-class TrackListViewController: UIViewController, TrackListInterface {
+class TrackListViewController: UIViewController {
 
+    //MARK:- properties
+    
     var eventHandler:TrackListModuleInterface?
+    var tracks:[TrackListItem]?
+    @IBOutlet var tracksTableView: UITableView!
+    
+    //MARK:- UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.tracks = [TrackListItem(distance: "1000 m", time: "30 minutes", date: "28/08/2015")]
+        self.tracksTableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    //MARK:- IBActions
     
     @IBAction func addTrack(sender: AnyObject) {
         eventHandler?.addTrack()
@@ -31,4 +35,43 @@ class TrackListViewController: UIViewController, TrackListInterface {
         eventHandler?.showSettings()
     }
     
+}
+
+//MARK:- TrackListInterface impl
+
+extension TrackListViewController : TrackListInterface {
+    func tracksFound(tracks:[TrackListItem]) {
+        self.tracks = tracks
+        tracksTableView.reloadData()
+    }
+}
+
+//MARK:- UITableViewDataSource impl
+
+extension TrackListViewController : UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let tracks = self.tracks {
+            return tracks.count
+        }
+        return 0;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(TrackListTableViewCell.cellId, forIndexPath: indexPath) as! TrackListTableViewCell
+        let track = tracks![indexPath.row]
+        
+        cell.currentDateLabel.text = track.dateOfWalking
+        cell.currentDistanceLabel.text = track.distancePassed
+        cell.currentTimeLabel.text = track.timeElapsed
+        
+        return cell
+    }
+}
+
+//MARK:- UITableViewDelegate impl
+
+extension TrackListViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        eventHandler?.showTrackDetails()
+    }
 }

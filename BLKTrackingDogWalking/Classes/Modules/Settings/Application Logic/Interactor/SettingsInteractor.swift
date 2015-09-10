@@ -13,11 +13,25 @@ class SettingsInteractor: NSObject {
     var output:SettingsInteractorOutput?
     
     func handleDistanceChange(distance:String) {
-        output?.showError("wrong distance")
+        //TODO:- add validator to distance
+        if let distanceNumber = distance.toInt() {
+            settingsManager?.distance = distanceNumber
+            settingsManager?.saveSettings()
+        }
+        else {
+            output?.showError("wrong distance")
+        }
     }
     
     func handleTimeChange(time:String) {
-        output?.showError("wrong time")
+        //TODO:- add validator to time
+        if let timeNumber = time.toInt() {
+            settingsManager?.time = timeNumber
+            settingsManager?.saveSettings()
+        }
+        else {
+            output?.showError("wrong time")
+        }
     }
     
     func fillInfo() {

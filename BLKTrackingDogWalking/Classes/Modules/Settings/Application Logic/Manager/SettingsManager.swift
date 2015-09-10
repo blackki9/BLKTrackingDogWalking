@@ -11,24 +11,28 @@ import UIKit
 let SettingsManagerDistanceKey = "SettingsManagerDistanceKey"
 let SettingsManagerTimeKey = "SettingsManagerTimeKey"
 
+let distanceDefaultValue = 1000
+let timeDefaultValue = 15
+
 class SettingsManager {
    
     var distance:Int = 0
     var time:Int = 0
+    let userDefaults:NSUserDefaults
     
-    init() {
+    init(userDefaults:NSUserDefaults) {
+        self.userDefaults = userDefaults
         loadSettings()
     }
     
     func loadSettings() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
         distance = userDefaults.integerForKey( SettingsManagerDistanceKey)
+        distance = (distance == 0) ? distanceDefaultValue : distance
         time = userDefaults.integerForKey(SettingsManagerTimeKey)
+        time = (time == 0) ? timeDefaultValue : time
     }
     
     func saveSettings() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
         userDefaults.setInteger(distance, forKey: SettingsManagerDistanceKey)
         userDefaults.setInteger(time, forKey: SettingsManagerTimeKey)
         

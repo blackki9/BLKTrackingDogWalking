@@ -32,6 +32,27 @@
 		FD6EEB021BA0015E008E6774 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEAFF1BA0015E008E6774 /* SettingsInteractor.swift */; };
 		FD6EEB041BA0016D008E6774 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB031BA0016D008E6774 /* SettingsManager.swift */; };
 		FD6EEB061BA01733008E6774 /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB051BA01733008E6774 /* SettingsInteractorOutput.swift */; };
+		FD6EEB0B1BA02D94008E6774 /* TrackListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB0A1BA02D94008E6774 /* TrackListInteractor.swift */; };
+		FD6EEB0D1BA02DA6008E6774 /* TracksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB0C1BA02DA6008E6774 /* TracksDataManager.swift */; };
+		FD6EEB0F1BA02F26008E6774 /* TrackListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB0E1BA02F26008E6774 /* TrackListInteractorOutput.swift */; };
+		FD6EEB111BA058AB008E6774 /* TrackListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEB101BA058AB008E6774 /* TrackListItem.swift */; };
+		FDCDBB501BA070D4009AA5F3 /* TrackListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB4F1BA070D4009AA5F3 /* TrackListTableViewCell.swift */; };
+		FDCDBB641BA07B62009AA5F3 /* NewTrackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB631BA07B62009AA5F3 /* NewTrackInteractor.swift */; };
+		FDCDBB661BA07B72009AA5F3 /* NewTrackDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB651BA07B72009AA5F3 /* NewTrackDataManager.swift */; };
+		FDCDBB681BA07B7F009AA5F3 /* NewTrackWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB671BA07B7F009AA5F3 /* NewTrackWireframe.swift */; };
+		FDCDBB6A1BA07B8E009AA5F3 /* NewTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB691BA07B8E009AA5F3 /* NewTrackViewController.swift */; };
+		FDCDBB6C1BA07BA0009AA5F3 /* NewTrackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB6B1BA07BA0009AA5F3 /* NewTrackPresenter.swift */; };
+		FDCDBB6E1BA07BAF009AA5F3 /* NewTrackModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB6D1BA07BAF009AA5F3 /* NewTrackModuleInterface.swift */; };
+		FDCDBB701BA07CB0009AA5F3 /* NewTrackViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB6F1BA07CB0009AA5F3 /* NewTrackViewInterface.swift */; };
+		FDCDBB721BA07CC5009AA5F3 /* NewTrackInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB711BA07CC5009AA5F3 /* NewTrackInteractorIO.swift */; };
+		FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB731BA17FE6009AA5F3 /* TrackDetailsInteractor.swift */; };
+		FDCDBB761BA17FF2009AA5F3 /* TrackDetailsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB751BA17FF2009AA5F3 /* TrackDetailsDataManager.swift */; };
+		FDCDBB781BA18007009AA5F3 /* TrackDetailsModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB771BA18007009AA5F3 /* TrackDetailsModuleInterface.swift */; };
+		FDCDBB7A1BA18019009AA5F3 /* TrackDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB791BA18019009AA5F3 /* TrackDetailsPresenter.swift */; };
+		FDCDBB7C1BA1802A009AA5F3 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB7B1BA1802A009AA5F3 /* TrackDetailsViewController.swift */; };
+		FDCDBB7E1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB7D1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift */; };
+		FDCDBB801BA1804F009AA5F3 /* TrackDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB7F1BA1804F009AA5F3 /* TrackDetailsWireframe.swift */; };
+		FDCDBB821BA18077009AA5F3 /* TrackDetailsInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB811BA18077009AA5F3 /* TrackDetailsInteractorIO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +98,27 @@
 		FD6EEAFF1BA0015E008E6774 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		FD6EEB031BA0016D008E6774 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		FD6EEB051BA01733008E6774 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
+		FD6EEB0A1BA02D94008E6774 /* TrackListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListInteractor.swift; sourceTree = "<group>"; };
+		FD6EEB0C1BA02DA6008E6774 /* TracksDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksDataManager.swift; sourceTree = "<group>"; };
+		FD6EEB0E1BA02F26008E6774 /* TrackListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListInteractorOutput.swift; sourceTree = "<group>"; };
+		FD6EEB101BA058AB008E6774 /* TrackListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListItem.swift; sourceTree = "<group>"; };
+		FDCDBB4F1BA070D4009AA5F3 /* TrackListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListTableViewCell.swift; sourceTree = "<group>"; };
+		FDCDBB631BA07B62009AA5F3 /* NewTrackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackInteractor.swift; sourceTree = "<group>"; };
+		FDCDBB651BA07B72009AA5F3 /* NewTrackDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackDataManager.swift; sourceTree = "<group>"; };
+		FDCDBB671BA07B7F009AA5F3 /* NewTrackWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackWireframe.swift; sourceTree = "<group>"; };
+		FDCDBB691BA07B8E009AA5F3 /* NewTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackViewController.swift; sourceTree = "<group>"; };
+		FDCDBB6B1BA07BA0009AA5F3 /* NewTrackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackPresenter.swift; sourceTree = "<group>"; };
+		FDCDBB6D1BA07BAF009AA5F3 /* NewTrackModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackModuleInterface.swift; sourceTree = "<group>"; };
+		FDCDBB6F1BA07CB0009AA5F3 /* NewTrackViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackViewInterface.swift; sourceTree = "<group>"; };
+		FDCDBB711BA07CC5009AA5F3 /* NewTrackInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrackInteractorIO.swift; sourceTree = "<group>"; };
+		FDCDBB731BA17FE6009AA5F3 /* TrackDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsInteractor.swift; sourceTree = "<group>"; };
+		FDCDBB751BA17FF2009AA5F3 /* TrackDetailsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsDataManager.swift; sourceTree = "<group>"; };
+		FDCDBB771BA18007009AA5F3 /* TrackDetailsModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsModuleInterface.swift; sourceTree = "<group>"; };
+		FDCDBB791BA18019009AA5F3 /* TrackDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsPresenter.swift; sourceTree = "<group>"; };
+		FDCDBB7B1BA1802A009AA5F3 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
+		FDCDBB7D1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewInterface.swift; sourceTree = "<group>"; };
+		FDCDBB7F1BA1804F009AA5F3 /* TrackDetailsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsWireframe.swift; sourceTree = "<group>"; };
+		FDCDBB811BA18077009AA5F3 /* TrackDetailsInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailsInteractorIO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +250,9 @@
 		FD6EEAB71B9F45F1008E6774 /* NewTrack */ = {
 			isa = PBXGroup;
 			children = (
+				FDCDBB511BA07AE0009AA5F3 /* Application Logic */,
+				FDCDBB551BA07AE0009AA5F3 /* Module Interface */,
+				FDCDBB561BA07AE0009AA5F3 /* User Interface */,
 			);
 			path = NewTrack;
 			sourceTree = "<group>";
@@ -215,6 +260,9 @@
 		FD6EEAB81B9F45F1008E6774 /* PreviousTrackDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FDCDBB5A1BA07AEA009AA5F3 /* Application Logic */,
+				FDCDBB5E1BA07AEA009AA5F3 /* Module Interface */,
+				FDCDBB5F1BA07AEA009AA5F3 /* User Interface */,
 			);
 			name = PreviousTrackDetails;
 			path = PreviousTrack;
@@ -277,6 +325,9 @@
 		FD6EEADA1B9F57C2008E6774 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
+				FD6EEB071BA02D7D008E6774 /* Interactor */,
+				FD6EEB081BA02D7D008E6774 /* Manager */,
+				FD6EEB091BA02D7D008E6774 /* Model */,
 			);
 			path = "Application Logic";
 			sourceTree = "<group>";
@@ -312,6 +363,7 @@
 			children = (
 				FD6EEAE01B9F57D6008E6774 /* TrackListViewController.swift */,
 				FD6EEAE81B9F5936008E6774 /* TrackListInterface.swift */,
+				FDCDBB4F1BA070D4009AA5F3 /* TrackListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +451,188 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FD6EEB071BA02D7D008E6774 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EEB0A1BA02D94008E6774 /* TrackListInteractor.swift */,
+				FD6EEB0E1BA02F26008E6774 /* TrackListInteractorOutput.swift */,
+				FD6EEB101BA058AB008E6774 /* TrackListItem.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FD6EEB081BA02D7D008E6774 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EEB0C1BA02DA6008E6774 /* TracksDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FD6EEB091BA02D7D008E6774 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDCDBB511BA07AE0009AA5F3 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB521BA07AE0009AA5F3 /* Interactor */,
+				FDCDBB531BA07AE0009AA5F3 /* Manager */,
+				FDCDBB541BA07AE0009AA5F3 /* Model */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		FDCDBB521BA07AE0009AA5F3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB631BA07B62009AA5F3 /* NewTrackInteractor.swift */,
+				FDCDBB711BA07CC5009AA5F3 /* NewTrackInteractorIO.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FDCDBB531BA07AE0009AA5F3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB651BA07B72009AA5F3 /* NewTrackDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FDCDBB541BA07AE0009AA5F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDCDBB551BA07AE0009AA5F3 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB6D1BA07BAF009AA5F3 /* NewTrackModuleInterface.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		FDCDBB561BA07AE0009AA5F3 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB571BA07AE0009AA5F3 /* Presenter */,
+				FDCDBB581BA07AE0009AA5F3 /* View */,
+				FDCDBB591BA07AE0009AA5F3 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		FDCDBB571BA07AE0009AA5F3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB6B1BA07BA0009AA5F3 /* NewTrackPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FDCDBB581BA07AE0009AA5F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB691BA07B8E009AA5F3 /* NewTrackViewController.swift */,
+				FDCDBB6F1BA07CB0009AA5F3 /* NewTrackViewInterface.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCDBB591BA07AE0009AA5F3 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB671BA07B7F009AA5F3 /* NewTrackWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		FDCDBB5A1BA07AEA009AA5F3 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB5B1BA07AEA009AA5F3 /* Interactor */,
+				FDCDBB5C1BA07AEA009AA5F3 /* Manager */,
+				FDCDBB5D1BA07AEA009AA5F3 /* Model */,
+			);
+			name = "Application Logic";
+			path = "BLKTrackingDogWalking/Classes/Modules/PreviousTrackDetails/Application Logic";
+			sourceTree = SOURCE_ROOT;
+		};
+		FDCDBB5B1BA07AEA009AA5F3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB731BA17FE6009AA5F3 /* TrackDetailsInteractor.swift */,
+				FDCDBB811BA18077009AA5F3 /* TrackDetailsInteractorIO.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FDCDBB5C1BA07AEA009AA5F3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB751BA17FF2009AA5F3 /* TrackDetailsDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FDCDBB5D1BA07AEA009AA5F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDCDBB5E1BA07AEA009AA5F3 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB771BA18007009AA5F3 /* TrackDetailsModuleInterface.swift */,
+			);
+			name = "Module Interface";
+			path = "BLKTrackingDogWalking/Classes/Modules/PreviousTrackDetails/Module Interface";
+			sourceTree = SOURCE_ROOT;
+		};
+		FDCDBB5F1BA07AEA009AA5F3 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB601BA07AEA009AA5F3 /* Presenter */,
+				FDCDBB611BA07AEA009AA5F3 /* View */,
+				FDCDBB621BA07AEA009AA5F3 /* Wireframe */,
+			);
+			name = "User Interface";
+			path = "BLKTrackingDogWalking/Classes/Modules/PreviousTrackDetails/User Interface";
+			sourceTree = SOURCE_ROOT;
+		};
+		FDCDBB601BA07AEA009AA5F3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB791BA18019009AA5F3 /* TrackDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FDCDBB611BA07AEA009AA5F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB7B1BA1802A009AA5F3 /* TrackDetailsViewController.swift */,
+				FDCDBB7D1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCDBB621BA07AEA009AA5F3 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				FDCDBB7F1BA1804F009AA5F3 /* TrackDetailsWireframe.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,25 +787,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6EEAE11B9F57D6008E6774 /* TrackListViewController.swift in Sources */,
+				FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */,
+				FDCDBB781BA18007009AA5F3 /* TrackDetailsModuleInterface.swift in Sources */,
+				FDCDBB801BA1804F009AA5F3 /* TrackDetailsWireframe.swift in Sources */,
 				FD6EEAE91B9F5936008E6774 /* TrackListInterface.swift in Sources */,
+				FDCDBB661BA07B72009AA5F3 /* NewTrackDataManager.swift in Sources */,
+				FDCDBB681BA07B7F009AA5F3 /* NewTrackWireframe.swift in Sources */,
+				FDCDBB7C1BA1802A009AA5F3 /* TrackDetailsViewController.swift in Sources */,
 				FD6EEB061BA01733008E6774 /* SettingsInteractorOutput.swift in Sources */,
+				FDCDBB6C1BA07BA0009AA5F3 /* NewTrackPresenter.swift in Sources */,
 				FD6EEAC11B9F4683008E6774 /* TrackingWalking.xcdatamodeld in Sources */,
 				FD6EEAC61B9F47A5008E6774 /* ManagedWalkingTrack.swift in Sources */,
 				FD6EEAE71B9F582E008E6774 /* TrackListModuleInterface.swift in Sources */,
 				FD6EEAC91B9F4BDD008E6774 /* AppConfiguration.swift in Sources */,
+				FDCDBB6E1BA07BAF009AA5F3 /* NewTrackModuleInterface.swift in Sources */,
+				FDCDBB7A1BA18019009AA5F3 /* TrackDetailsPresenter.swift in Sources */,
 				FD6EEAE51B9F57F5008E6774 /* TrackListPresenter.swift in Sources */,
 				FD6EEACC1B9F4FB1008E6774 /* RootWireframe.swift in Sources */,
+				FDCDBB721BA07CC5009AA5F3 /* NewTrackInteractorIO.swift in Sources */,
+				FD6EEB0B1BA02D94008E6774 /* TrackListInteractor.swift in Sources */,
 				FD6EEB041BA0016D008E6774 /* SettingsManager.swift in Sources */,
 				FD6EEABD1B9F464A008E6774 /* WalkingTrack.swift in Sources */,
 				FD6EEAFB1B9FFF54008E6774 /* SettingsModuleInterface.swift in Sources */,
+				FDCDBB6A1BA07B8E009AA5F3 /* NewTrackViewController.swift in Sources */,
+				FD6EEB0D1BA02DA6008E6774 /* TracksDataManager.swift in Sources */,
+				FDCDBB701BA07CB0009AA5F3 /* NewTrackViewInterface.swift in Sources */,
+				FDCDBB501BA070D4009AA5F3 /* TrackListTableViewCell.swift in Sources */,
 				FD6EEAF31B9F5CAE008E6774 /* SettingsViewController.swift in Sources */,
 				FD6EEAFD1BA00030008E6774 /* SettingsViewInterface.swift in Sources */,
 				FD6EEA911B9F4424008E6774 /* AppDelegate.swift in Sources */,
+				FD6EEB0F1BA02F26008E6774 /* TrackListInteractorOutput.swift in Sources */,
 				FD6EEAE31B9F57E7008E6774 /* TrackListWireFrame.swift in Sources */,
 				FD6EEAF11B9F5BEE008E6774 /* SettingsWireframe.swift in Sources */,
 				FD6EEAC41B9F46A7008E6774 /* CoreDataStore.swift in Sources */,
+				FDCDBB7E1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift in Sources */,
 				FD6EEAF71B9FFD26008E6774 /* SettingsPresenter.swift in Sources */,
+				FDCDBB641BA07B62009AA5F3 /* NewTrackInteractor.swift in Sources */,
+				FD6EEB111BA058AB008E6774 /* TrackListItem.swift in Sources */,
 				FD6EEB021BA0015E008E6774 /* SettingsInteractor.swift in Sources */,
+				FDCDBB761BA17FF2009AA5F3 /* TrackDetailsDataManager.swift in Sources */,
+				FDCDBB821BA18077009AA5F3 /* TrackDetailsInteractorIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TrackListInterface {
-    
+    func tracksFound(tracks:[TrackListItem])
 }

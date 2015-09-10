@@ -10,18 +10,26 @@ import UIKit
 
 class TrackListPresenter: NSObject,TrackListModuleInterface {
  
+    var trackListInteractorInput:TrackListInteractorInput?
     var trackListWireframe:TrackListWireFrame?
+    var userInterface:TrackListInterface?
     
     func showSettings() {
         trackListWireframe?.showSettings()
     }
     
     func addTrack() {
-        
+        trackListWireframe?.addTrack()
     }
     
     func showTrackDetails() {
-        
+        trackListWireframe?.showTrackDetails()
     }
     
+}
+
+extension TrackListPresenter : TrackListInteractorOutput {
+    func tracksFound([TrackListItem]) {
+        
+    }
 }

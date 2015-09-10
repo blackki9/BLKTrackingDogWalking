@@ -23,22 +23,43 @@ class AppConfiguration {
     func configureDependencies() {
         let dataStore = CoreDataStore()
         let rootWireframe = RootWireframe()
+        let settingsWireframe = SettingsWireframe()
+        let newTrackWireframe = NewTrackWireframe()
+        let trackDetailsWireframe = TrackDetailsWireframe()
         
         trackListWireframe.rootWireframe = rootWireframe
-        
+        trackListWireframe.newTrackWireframe = newTrackWireframe
+        trackListWireframe.settingsWireframe = settingsWireframe
+        trackListWireframe.trackDetailsWireframe = trackDetailsWireframe
+        //set up track list
         let trackListPresenter = TrackListPresenter()
         trackListWireframe.trackListPresenter = trackListPresenter
         trackListPresenter.trackListWireframe = trackListWireframe
-        let settingsWireframe = SettingsWireframe()
+        let trackListInteractor = TrackListInteractor(dataManager: TracksDataManager(coreDataStore: dataStore))
+        trackListInteractor.output = trackListPresenter
+        trackListPresenter.trackListInteractorInput = trackListInteractor
         
-        trackListWireframe.settingsWireframe = settingsWireframe
-        
+        //set up settings
         let settingsPresenter = SettingsPresenter()
         settingsWireframe.presenter = settingsPresenter
         let settingsInteractor = SettingsInteractor()
         settingsPresenter.interactor = settingsInteractor
         settingsInteractor.output = settingsPresenter
-        settingsInteractor.settingsManager = SettingsManager()
+        settingsInteractor.settingsManager = SettingsManager(userDefaults: NSUserDefaults.standardUserDefaults())
+        
+        //set up new track
+        let newTrackPresenter = NewTrackPresenter()
+        newTrackWireframe.presenter = newTrackPresenter
+        let newTrackInteractor = NewTrackInteractor()
+        newTrackPresenter.interactorInput = newTrackInteractor
+        newTrackInteractor.output = newTrackPresenter
+        
+        //set up track details
+        let trackDetailsPresenter = TrackDetailsPresenter()
+        let trackDetailsInteractor = TrackDetailsInteractor()
+        trackDetailsWireframe.presenter = trackDetailsPresenter
+        trackDetailsPresenter.interactorIntput = trackDetailsInteractor
+        trackDetailsInteractor.output = trackDetailsPresenter
         
     }
     

@@ -10,6 +10,13 @@ import UIKit
 
 class WalkingTrack {
     var date: NSDate?
-    var distanceInMeters: Int32?
-    var timeInSeconds: Int32?
+    var distanceInMeters: Int?
+    var timeInMinutes: Int?
+    
+    init(distance:Int,time:Int,date:NSDate) {
+        self.distanceInMeters = distance
+        self.timeInMinutes = time / 60
+        self.date = date
+    }
+    
 }

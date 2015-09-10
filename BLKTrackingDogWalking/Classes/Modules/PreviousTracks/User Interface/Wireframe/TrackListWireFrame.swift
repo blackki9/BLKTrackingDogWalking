@@ -16,11 +16,14 @@ class TrackListWireFrame: NSObject {
     var settingsWireframe:SettingsWireframe?
     var trackListPresenter:TrackListPresenter?
     var trackListViewController:TrackListViewController?
+    var newTrackWireframe:NewTrackWireframe?
+    var trackDetailsWireframe:TrackDetailsWireframe?
     
     func presentTrackListFromWindow(window:UIWindow) {
         let viewController = trackListControllerFromStoryboard()
         trackListViewController = viewController
         trackListViewController?.eventHandler = trackListPresenter
+        trackListPresenter?.userInterface = trackListViewController
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
@@ -35,7 +38,7 @@ class TrackListWireFrame: NSObject {
     //MARK : - show screens
     
     func addTrack() {
-        
+        newTrackWireframe?.presentNewTrackFromViewController(trackListViewController!)
     }
     
     func showSettings() {
@@ -43,7 +46,7 @@ class TrackListWireFrame: NSObject {
     }
     
     func showTrackDetails() {
-        
+        trackDetailsWireframe?.presentTrackDetailsFromViewController(trackListViewController!)
     }
     
 }
