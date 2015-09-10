@@ -10,9 +10,20 @@ import UIKit
 
 class NewTrackDataManager: NSObject {
     let dataStore:CoreDataStore
+    var tracksManager:TracksManagerInterface? = nil
     
     init(dataStore:CoreDataStore) {
         self.dataStore = dataStore
         super.init()
     }
+    
+    func startNewTrackWithProgress(progress:((seconds:Int,distance:Int) -> ())?) {
+        tracksManager?.startTracking(progress)
+    }
+    
+    func stopNewTrack() {
+        tracksManager?.stopTracking()
+    }
+    
+    
 }

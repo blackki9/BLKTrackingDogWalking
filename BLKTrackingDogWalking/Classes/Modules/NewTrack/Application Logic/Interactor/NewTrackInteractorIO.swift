@@ -9,9 +9,12 @@
 import Foundation
 
 protocol NewTrackInteractorInput {
-    
+    func startTracking()
 }
 
 protocol NewTrackInteractorOutput {
+    func showTime(time:String)
+    func showDistance(distance:String)
+    func showDate(date:String)
     
 }

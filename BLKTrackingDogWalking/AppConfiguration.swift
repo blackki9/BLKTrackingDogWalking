@@ -11,7 +11,7 @@ import UIKit
 class AppConfiguration {
     
     let trackListWireframe = TrackListWireFrame()
-   
+    let trackManager = TracksManager()
     init() {
         configureDependencies()
     }
@@ -21,6 +21,8 @@ class AppConfiguration {
     }
     
     func configureDependencies() {
+        trackManager.initLocationManager()
+        
         let dataStore = CoreDataStore()
         let rootWireframe = RootWireframe()
         let settingsWireframe = SettingsWireframe()
@@ -53,7 +55,10 @@ class AppConfiguration {
         let newTrackInteractor = NewTrackInteractor()
         newTrackPresenter.interactorInput = newTrackInteractor
         newTrackInteractor.output = newTrackPresenter
-        
+        let newTrackDataManager = NewTrackDataManager(dataStore: dataStore)
+        newTrackDataManager.tracksManager = trackManager
+        newTrackInteractor.dataManager = newTrackDataManager
+
         //set up track details
         let trackDetailsPresenter = TrackDetailsPresenter()
         let trackDetailsInteractor = TrackDetailsInteractor()

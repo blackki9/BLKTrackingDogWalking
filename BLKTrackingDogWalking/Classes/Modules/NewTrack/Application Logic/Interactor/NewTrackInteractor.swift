@@ -8,6 +8,22 @@
 
 import UIKit
 
-class NewTrackInteractor: NSObject,NewTrackInteractorInput {
+class NewTrackInteractor: NSObject, NewTrackInteractorInput {
     var output:NewTrackInteractorOutput?
+    var dataManager:NewTrackDataManager?
+    
+    func startTracking() {
+        output?.showDate("")
+        dataManager?.startNewTrackWithProgress({ (seconds, distance) -> () in
+            self.output?.showTime(seconds.description)
+            self.output?.showDistance(distance.description)
+            
+               println("seconds : \(seconds) + meters : \(distance)")
+        })
+    }
+    
+    func stopTracking() {
+        dataManager?.stopNewTrack()
+    }
+    
 }
