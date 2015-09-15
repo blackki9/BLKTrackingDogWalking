@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5F3D1CD491852FDD592E15F9 /* libPods-BLKTrackingDogWalking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAFED2CDFCB8275DEC26AD0 /* libPods-BLKTrackingDogWalking.a */; };
+		FD68ADA91BA860030012D91D /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADA81BA860030012D91D /* Formatter.swift */; };
+		FD68ADAB1BA861450012D91D /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAA1BA861450012D91D /* DistanceFormatter.swift */; };
+		FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAC1BA862A50012D91D /* TimeFormatter.swift */; };
+		FD68ADAF1BA863E40012D91D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAE1BA863E40012D91D /* DateFormatter.swift */; };
 		FD6EEA911B9F4424008E6774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEA901B9F4424008E6774 /* AppDelegate.swift */; };
 		FD6EEA961B9F4424008E6774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA941B9F4424008E6774 /* Main.storyboard */; };
 		FD6EEA981B9F4424008E6774 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA971B9F4424008E6774 /* Images.xcassets */; };
@@ -79,6 +83,10 @@
 		197BFB4AEFDF1E046420B42A /* Pods-BLKTrackingDogWalking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKTrackingDogWalking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLKTrackingDogWalking/Pods-BLKTrackingDogWalking.release.xcconfig"; sourceTree = "<group>"; };
 		7A00ED016420E07D7B5F4E03 /* Pods-BLKTrackingDogWalking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKTrackingDogWalking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLKTrackingDogWalking/Pods-BLKTrackingDogWalking.debug.xcconfig"; sourceTree = "<group>"; };
 		ECAFED2CDFCB8275DEC26AD0 /* libPods-BLKTrackingDogWalking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLKTrackingDogWalking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD68ADA81BA860030012D91D /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		FD68ADAA1BA861450012D91D /* DistanceFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
+		FD68ADAC1BA862A50012D91D /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		FD68ADAE1BA863E40012D91D /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FD6EEA8B1B9F4424008E6774 /* BLKTrackingDogWalking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLKTrackingDogWalking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6EEA8F1B9F4424008E6774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6EEA901B9F4424008E6774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +195,17 @@
 				197BFB4AEFDF1E046420B42A /* Pods-BLKTrackingDogWalking.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FD68ADA71BA85ED50012D91D /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FD68ADA81BA860030012D91D /* Formatter.swift */,
+				FD68ADAA1BA861450012D91D /* DistanceFormatter.swift */,
+				FD68ADAC1BA862A50012D91D /* TimeFormatter.swift */,
+				FD68ADAE1BA863E40012D91D /* DateFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		FD6EEA821B9F4424008E6774 = {
@@ -673,6 +692,7 @@
 		FDCDBB9B1BA1C49D009AA5F3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FD68ADA71BA85ED50012D91D /* Formatters */,
 				FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */,
 				FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */,
 			);
@@ -836,6 +856,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6EEAE11B9F57D6008E6774 /* TrackListViewController.swift in Sources */,
+				FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */,
 				FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */,
 				FDCDBB781BA18007009AA5F3 /* TrackDetailsModuleInterface.swift in Sources */,
 				FDCDBB801BA1804F009AA5F3 /* TrackDetailsWireframe.swift in Sources */,
@@ -854,9 +875,11 @@
 				FDCDBB7A1BA18019009AA5F3 /* TrackDetailsPresenter.swift in Sources */,
 				FD6EEAE51B9F57F5008E6774 /* TrackListPresenter.swift in Sources */,
 				FD6EEACC1B9F4FB1008E6774 /* RootWireframe.swift in Sources */,
+				FD68ADAB1BA861450012D91D /* DistanceFormatter.swift in Sources */,
 				FDCDBB721BA07CC5009AA5F3 /* NewTrackInteractorIO.swift in Sources */,
 				FDCDBB9A1BA19898009AA5F3 /* Location.swift in Sources */,
 				FD6EEB0B1BA02D94008E6774 /* TrackListInteractor.swift in Sources */,
+				FD68ADAF1BA863E40012D91D /* DateFormatter.swift in Sources */,
 				FD6EEB041BA0016D008E6774 /* SettingsManager.swift in Sources */,
 				FD6EEABD1B9F464A008E6774 /* WalkingTrack.swift in Sources */,
 				FD6EEAFB1B9FFF54008E6774 /* SettingsModuleInterface.swift in Sources */,
@@ -867,6 +890,7 @@
 				FD6EEAF31B9F5CAE008E6774 /* SettingsViewController.swift in Sources */,
 				FD6EEAFD1BA00030008E6774 /* SettingsViewInterface.swift in Sources */,
 				FD6EEA911B9F4424008E6774 /* AppDelegate.swift in Sources */,
+				FD68ADA91BA860030012D91D /* Formatter.swift in Sources */,
 				FD6EEB0F1BA02F26008E6774 /* TrackListInteractorOutput.swift in Sources */,
 				FD6EEAE31B9F57E7008E6774 /* TrackListWireFrame.swift in Sources */,
 				FDCDBB9D1BA1C4E2009AA5F3 /* TracksManager.swift in Sources */,

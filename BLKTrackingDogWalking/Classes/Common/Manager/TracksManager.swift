@@ -62,6 +62,7 @@ extension TracksManager: TracksManagerInterface {
     
     func startTracking(progressBlock:((seconds:Int,distance:Int) -> ())?) {
         seconds = 0
+        meters = 0
         self.progressBlock = progressBlock
         
         if let valid = timer?.valid {

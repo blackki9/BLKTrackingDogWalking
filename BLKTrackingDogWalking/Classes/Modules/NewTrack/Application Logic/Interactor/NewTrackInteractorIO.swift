@@ -13,8 +13,8 @@ protocol NewTrackInteractorInput {
 }
 
 protocol NewTrackInteractorOutput {
-    func showTime(time:String)
-    func showDistance(distance:String)
-    func showDate(date:String)
+    func showTime(time:Int)
+    func showDistance(distance:Double)
+    func showDate(date:NSDate)
     
 }

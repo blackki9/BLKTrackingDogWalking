@@ -12,6 +12,10 @@ class AppConfiguration {
     
     let trackListWireframe = TrackListWireFrame()
     let trackManager = TracksManager()
+    let dateFormatter = DateFormatter(formatString: "dd-MM-yyyy")
+    let timeFormatter = TimeFormatter()
+    let distanceFormatter = DistanceFormatter()
+    
     init() {
         configureDependencies()
     }
@@ -54,6 +58,9 @@ class AppConfiguration {
         newTrackWireframe.presenter = newTrackPresenter
         let newTrackInteractor = NewTrackInteractor()
         newTrackPresenter.interactorInput = newTrackInteractor
+        newTrackPresenter.dateFormatter = dateFormatter
+        newTrackPresenter.timeFormatter = timeFormatter
+        newTrackPresenter.distanceFormatter = distanceFormatter
         newTrackInteractor.output = newTrackPresenter
         let newTrackDataManager = NewTrackDataManager(dataStore: dataStore)
         newTrackDataManager.tracksManager = trackManager

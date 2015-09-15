@@ -13,10 +13,10 @@ class NewTrackInteractor: NSObject, NewTrackInteractorInput {
     var dataManager:NewTrackDataManager?
     
     func startTracking() {
-        output?.showDate("")
+        output?.showDate(NSDate())
         dataManager?.startNewTrackWithProgress({ (seconds, distance) -> () in
-            self.output?.showTime(seconds.description)
-            self.output?.showDistance(distance.description)
+            self.output?.showTime(seconds)
+            self.output?.showDistance(Double(distance))
             
                println("seconds : \(seconds) + meters : \(distance)")
         })

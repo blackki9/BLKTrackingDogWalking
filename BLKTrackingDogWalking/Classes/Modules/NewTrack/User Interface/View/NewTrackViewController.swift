@@ -9,8 +9,12 @@
 import UIKit
 import MapKit
 
+let mapRegionBoneSize = 1000.0
+
 class NewTrackViewController: UIViewController {
 
+    //MARK:-properties
+    
     static let storyboardId = "NewTrackViewController"
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var currentDistanceLabel: UILabel!
@@ -19,20 +23,14 @@ class NewTrackViewController: UIViewController {
     @IBOutlet var currentDateLabel: UILabel!
     var eventHandler:NewTrackModuleInterface?
     
+    //MARK:- UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New track"
         mapView.showsUserLocation = true
+        mapView.delegate = self
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if let userLocation = mapView.userLocation {
-            let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 250, 250)
-            mapView.setRegion(region, animated: true)
-        }
- 
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,11 +49,21 @@ class NewTrackViewController: UIViewController {
     }
 }
 
+//MARK:- MKMapViewDelegate
+
 extension NewTrackViewController : MKMapViewDelegate {
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
     }
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        if let userLocation = mapView.userLocation {
+            let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, mapRegionBoneSize, mapRegionBoneSize)
+            mapView.setRegion(region, animated: true)
+        }
+    }
 
 }
+
+//MARK:- NewTrackViewInterface
 
 extension NewTrackViewController : NewTrackViewInterface {
     func showTime(time: String) {
