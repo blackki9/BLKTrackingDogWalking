@@ -9,11 +9,11 @@
 import UIKit
 
 protocol TrackDetailsInteractorInput {
-    
+    func updateView()
 }
 
 protocol TrackDetailsInteractorOutput {
-    
+    func fillInfo(details:TrackListItem)
 }
 
 

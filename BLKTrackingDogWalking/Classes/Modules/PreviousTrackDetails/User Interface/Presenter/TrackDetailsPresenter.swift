@@ -14,9 +14,15 @@ class TrackDetailsPresenter: NSObject {
 }
 
 extension TrackDetailsPresenter : TrackDetailsModuleInterface {
-    
+    func updateView() {
+        interactorIntput?.updateView()
+    }
 }
 
 extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
-    
+    func fillInfo(details: TrackListItem) {
+        viewInterface?.showDate(details.dateOfWalking)
+        viewInterface?.showDistance(details.distancePassed)
+        viewInterface?.showTime(details.timeElapsed)
+    }
 }

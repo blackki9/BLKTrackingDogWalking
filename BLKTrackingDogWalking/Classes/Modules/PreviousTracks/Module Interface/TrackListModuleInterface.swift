@@ -11,6 +11,6 @@ import Foundation
 protocol TrackListModuleInterface {
     func showSettings()
     func addTrack()
-    func showTrackDetails()
+    func showTrackDetailsWithIndex(details:TrackListItem) 
     func updateData()
 }

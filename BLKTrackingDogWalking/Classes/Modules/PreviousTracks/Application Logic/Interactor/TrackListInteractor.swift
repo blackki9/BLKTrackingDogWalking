@@ -28,7 +28,13 @@ class TrackListInteractor: NSObject,TrackListInteractorInput {
                 let timeString = self?.timeFormatter?.format(object.timeInSeconds!)
                 let dateString = self?.dateFormatter?.format(object.date!)
                 
-                return TrackListItem(distance:distanceString!, time: timeString!, date: dateString!)
+                let result = TrackListItem(distance:distanceString!, time: timeString!, date: dateString!,locations: object.locations.map({ (location:Location) -> LocationShowItem in
+                    let result = LocationShowItem(latitude:location.latitude,longitude:location.longitude)
+                    
+                    return result
+                }))
+                
+                return result
             })
             
             self?.output?.tracksFound(convertedItems)

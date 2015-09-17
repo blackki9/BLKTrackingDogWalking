@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class TimeFormatter: NSObject,Formatter {
     func format(object:Any?) -> String? {
@@ -16,7 +17,9 @@ class TimeFormatter: NSObject,Formatter {
             let minutes = (timeValue / 60) % 60
             let hours = timeValue / 3600
             
-            return "\(hours):\(minutes):\(seconds)"
+            let result = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
+            
+            return result
         }
         
         return nil

@@ -10,5 +10,7 @@ import Foundation
 
 
 protocol TrackDetailsViewInterface {
-    
+    func showDate(dateString:String)
+    func showTime(timeString:String)
+    func showDistance(distanceString:String)
 }

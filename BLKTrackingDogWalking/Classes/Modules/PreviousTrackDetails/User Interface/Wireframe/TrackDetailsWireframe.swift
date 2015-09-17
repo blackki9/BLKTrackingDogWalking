@@ -11,13 +11,14 @@ import UIKit
 class TrackDetailsWireframe: NSObject {
     var presenter:TrackDetailsPresenter?
     var presentedViewController:TrackDetailsViewController?
+    var interactor:TrackDetailsInteractor?
     
-    func presentTrackDetailsFromViewController(viewController:UIViewController) {
+    func presentTrackDetailsFromViewController(viewController:UIViewController,trackItem:TrackListItem) {
         let newController = trackDetailsControllerFromStoryboard()
         presentedViewController = newController
         newController.eventHandler = presenter
         presenter?.viewInterface = newController
-        
+        interactor?.trackDetails = trackItem
         viewController.navigationController?.pushViewController(newController, animated: true)
     }
     func trackDetailsControllerFromStoryboard() -> TrackDetailsViewController {

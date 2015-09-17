@@ -79,6 +79,7 @@ class AppConfiguration {
         let trackDetailsInteractor = TrackDetailsInteractor()
         trackDetailsWireframe.presenter = trackDetailsPresenter
         trackDetailsPresenter.interactorIntput = trackDetailsInteractor
+        trackDetailsWireframe.interactor = trackDetailsInteractor
         trackDetailsInteractor.output = trackDetailsPresenter
         
     }
