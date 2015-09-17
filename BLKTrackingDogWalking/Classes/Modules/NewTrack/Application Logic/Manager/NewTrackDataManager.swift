@@ -54,6 +54,7 @@ class NewTrackDataManager: NSObject {
             managedTrack.distance = NSNumber(integer:self.currentDistance)
             managedTrack.time = NSNumber(integer:self.currentTime)
             
+            managedTrack.addLocations(self.locations,context:context)
         }
     }
     

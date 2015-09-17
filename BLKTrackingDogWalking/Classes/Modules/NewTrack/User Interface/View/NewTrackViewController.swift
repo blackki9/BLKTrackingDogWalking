@@ -19,6 +19,7 @@ class NewTrackViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var currentDistanceLabel: UILabel!
     @IBOutlet var currentTimeLabel: UILabel!
+    private var locations = [LocationShowItem]()
     
     @IBOutlet var currentDateLabel: UILabel!
     var eventHandler:NewTrackModuleInterface?
@@ -46,6 +47,7 @@ class NewTrackViewController: UIViewController {
     //MARK:- IBActions
     
     @IBAction func startTracking(sender: AnyObject) {
+        locations.removeAll(keepCapacity: false)
         eventHandler?.startTracking()
     }
     
@@ -53,6 +55,24 @@ class NewTrackViewController: UIViewController {
         eventHandler?.stopTracking()
     }
     
+    //MARK:- path handling
+    
+    func updatePath() {
+        if locations.count > 1 {
+            var coords = [CLLocationCoordinate2D]()
+            let lastLocation = locations.last
+            let previousLocation = locations[locations.count - 2]
+            
+            let lastCoordinate = CLLocationCoordinate2D(latitude: lastLocation!.latitude, longitude: lastLocation!.longitude)
+            let previousCoordinate = CLLocationCoordinate2D(latitude: previousLocation.latitude, longitude: previousLocation.longitude)
+            coords.append(previousCoordinate)
+            coords.append(lastCoordinate)
+
+            let region = MKCoordinateRegionMakeWithDistance(coords.last!, 500, 500)
+            mapView.setRegion(region, animated: true)
+            mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
+        }
+    }
 }
 
 //MARK:- MKMapViewDelegate
@@ -65,6 +85,22 @@ extension NewTrackViewController : MKMapViewDelegate {
             let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, mapRegionBoneSize, mapRegionBoneSize)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        
+        //TODO:- change to guard
+        if !overlay.isKindOfClass(MKPolyline) {
+            return nil
+        }
+        
+        let polyline = overlay as! MKPolyline
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        
+        renderer.strokeColor = UIColor.blueColor()
+        renderer.lineWidth = 3.0
+        
+        return renderer
     }
 
 }
@@ -82,5 +118,10 @@ extension NewTrackViewController : NewTrackViewInterface {
     
     func showDate(date: String) {
         currentDateLabel.text = date
+    }
+    
+    func showNewLocation(location:LocationShowItem) {
+        locations.append(location)
+        updatePath()
     }
 }

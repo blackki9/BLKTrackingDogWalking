@@ -13,4 +13,5 @@ protocol NewTrackViewInterface {
     func showTime(time:String)
     func showDistance(distance:String)
     func showDate(date:String)
+    func showNewLocation(location:LocationShowItem)
 }
