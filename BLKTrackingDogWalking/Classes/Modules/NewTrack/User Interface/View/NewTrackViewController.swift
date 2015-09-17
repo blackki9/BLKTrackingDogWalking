@@ -131,4 +131,14 @@ extension NewTrackViewController : NewTrackViewInterface {
         locations.append(location)
         updatePath()
     }
+    
+    func showAlertWithTitle(title:String,message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+            
+        }))
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }

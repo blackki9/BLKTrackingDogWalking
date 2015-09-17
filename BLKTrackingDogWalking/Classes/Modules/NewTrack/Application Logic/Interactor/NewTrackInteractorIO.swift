@@ -17,5 +17,5 @@ protocol NewTrackInteractorOutput {
     func showDistance(distance:Double)
     func showDate(date:NSDate)
     func showNewLocation(longitude:Double,latitude:Double)
-    
+    func trackSucceeded(succeded:Bool, reason:String)
 }
