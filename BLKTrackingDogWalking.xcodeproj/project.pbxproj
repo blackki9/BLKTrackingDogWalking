@@ -12,6 +12,8 @@
 		FD68ADAB1BA861450012D91D /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAA1BA861450012D91D /* DistanceFormatter.swift */; };
 		FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAC1BA862A50012D91D /* TimeFormatter.swift */; };
 		FD68ADAF1BA863E40012D91D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADAE1BA863E40012D91D /* DateFormatter.swift */; };
+		FD68ADE71BAABA330012D91D /* ManagedWalkingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADE61BAABA330012D91D /* ManagedWalkingTrack.swift */; };
+		FD68ADE91BAABA340012D91D /* ManagedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADE81BAABA340012D91D /* ManagedLocation.swift */; };
 		FD6EEA911B9F4424008E6774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEA901B9F4424008E6774 /* AppDelegate.swift */; };
 		FD6EEA961B9F4424008E6774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA941B9F4424008E6774 /* Main.storyboard */; };
 		FD6EEA981B9F4424008E6774 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA971B9F4424008E6774 /* Images.xcassets */; };
@@ -62,8 +64,6 @@
 		FDCDBB8E1BA1934E009AA5F3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCDBB8D1BA1934E009AA5F3 /* CoreData.framework */; };
 		FDCDBB901BA19355009AA5F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCDBB8F1BA19355009AA5F3 /* UIKit.framework */; };
 		FDCDBB921BA1935A009AA5F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCDBB911BA1935A009AA5F3 /* Foundation.framework */; };
-		FDCDBB941BA1969E009AA5F3 /* ManagedWalkingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB931BA1969E009AA5F3 /* ManagedWalkingTrack.swift */; };
-		FDCDBB981BA19885009AA5F3 /* ManagedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB971BA19885009AA5F3 /* ManagedLocation.swift */; };
 		FDCDBB9A1BA19898009AA5F3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB991BA19898009AA5F3 /* Location.swift */; };
 		FDCDBB9D1BA1C4E2009AA5F3 /* TracksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */; };
 		FDCDBB9F1BA1C5EF009AA5F3 /* TracksManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */; };
@@ -87,6 +87,8 @@
 		FD68ADAA1BA861450012D91D /* DistanceFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
 		FD68ADAC1BA862A50012D91D /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		FD68ADAE1BA863E40012D91D /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		FD68ADE61BAABA330012D91D /* ManagedWalkingTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWalkingTrack.swift; sourceTree = "<group>"; };
+		FD68ADE81BAABA340012D91D /* ManagedLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
 		FD6EEA8B1B9F4424008E6774 /* BLKTrackingDogWalking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLKTrackingDogWalking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6EEA8F1B9F4424008E6774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6EEA901B9F4424008E6774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +144,6 @@
 		FDCDBB8D1BA1934E009AA5F3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FDCDBB8F1BA19355009AA5F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDCDBB911BA1935A009AA5F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FDCDBB931BA1969E009AA5F3 /* ManagedWalkingTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWalkingTrack.swift; sourceTree = "<group>"; };
-		FDCDBB971BA19885009AA5F3 /* ManagedLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
 		FDCDBB991BA19898009AA5F3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManager.swift; sourceTree = "<group>"; };
 		FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManagerInterface.swift; sourceTree = "<group>"; };
@@ -362,8 +362,8 @@
 		FD6EEAC21B9F4696008E6774 /* entities */ = {
 			isa = PBXGroup;
 			children = (
-				FDCDBB971BA19885009AA5F3 /* ManagedLocation.swift */,
-				FDCDBB931BA1969E009AA5F3 /* ManagedWalkingTrack.swift */,
+				FD68ADE81BAABA340012D91D /* ManagedLocation.swift */,
+				FD68ADE61BAABA330012D91D /* ManagedWalkingTrack.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -863,7 +863,6 @@
 				FD6EEAE91B9F5936008E6774 /* TrackListInterface.swift in Sources */,
 				FDCDBB661BA07B72009AA5F3 /* NewTrackDataManager.swift in Sources */,
 				FDCDBB681BA07B7F009AA5F3 /* NewTrackWireframe.swift in Sources */,
-				FDCDBB941BA1969E009AA5F3 /* ManagedWalkingTrack.swift in Sources */,
 				FDCDBB7C1BA1802A009AA5F3 /* TrackDetailsViewController.swift in Sources */,
 				FD6EEB061BA01733008E6774 /* SettingsInteractorOutput.swift in Sources */,
 				FDCDBB6C1BA07BA0009AA5F3 /* NewTrackPresenter.swift in Sources */,
@@ -875,10 +874,12 @@
 				FDCDBB7A1BA18019009AA5F3 /* TrackDetailsPresenter.swift in Sources */,
 				FD6EEAE51B9F57F5008E6774 /* TrackListPresenter.swift in Sources */,
 				FD6EEACC1B9F4FB1008E6774 /* RootWireframe.swift in Sources */,
+				FD68ADE71BAABA330012D91D /* ManagedWalkingTrack.swift in Sources */,
 				FD68ADAB1BA861450012D91D /* DistanceFormatter.swift in Sources */,
 				FDCDBB721BA07CC5009AA5F3 /* NewTrackInteractorIO.swift in Sources */,
 				FDCDBB9A1BA19898009AA5F3 /* Location.swift in Sources */,
 				FD6EEB0B1BA02D94008E6774 /* TrackListInteractor.swift in Sources */,
+				FD68ADE91BAABA340012D91D /* ManagedLocation.swift in Sources */,
 				FD68ADAF1BA863E40012D91D /* DateFormatter.swift in Sources */,
 				FD6EEB041BA0016D008E6774 /* SettingsManager.swift in Sources */,
 				FD6EEABD1B9F464A008E6774 /* WalkingTrack.swift in Sources */,
@@ -900,7 +901,6 @@
 				FD6EEAF71B9FFD26008E6774 /* SettingsPresenter.swift in Sources */,
 				FDCDBB641BA07B62009AA5F3 /* NewTrackInteractor.swift in Sources */,
 				FD6EEB111BA058AB008E6774 /* TrackListItem.swift in Sources */,
-				FDCDBB981BA19885009AA5F3 /* ManagedLocation.swift in Sources */,
 				FD6EEB021BA0015E008E6774 /* SettingsInteractor.swift in Sources */,
 				FDCDBB761BA17FF2009AA5F3 /* TrackDetailsDataManager.swift in Sources */,
 				FDCDBB821BA18077009AA5F3 /* TrackDetailsInteractorIO.swift in Sources */,

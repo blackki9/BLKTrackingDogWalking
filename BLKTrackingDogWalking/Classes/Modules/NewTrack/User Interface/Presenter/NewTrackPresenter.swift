@@ -60,4 +60,8 @@ extension NewTrackPresenter : NewTrackInteractorOutput {
             viewInterface?.showDate("No date")
         }
     }
+    
+    func showNewLocation(longitude:Double,latitude:Double) {
+        
+    }
 }

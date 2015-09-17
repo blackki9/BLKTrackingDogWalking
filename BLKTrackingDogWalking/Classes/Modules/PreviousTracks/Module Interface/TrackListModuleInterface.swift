@@ -12,4 +12,5 @@ protocol TrackListModuleInterface {
     func showSettings()
     func addTrack()
     func showTrackDetails()
+    func updateData()
 }

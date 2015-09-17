@@ -25,6 +25,11 @@ class TrackListViewController: UIViewController {
         self.tracksTableView.reloadData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        eventHandler?.updateData()
+    }
+    
     //MARK:- IBActions
     
     @IBAction func addTrack(sender: AnyObject) {

@@ -32,6 +32,11 @@ class NewTrackViewController: UIViewController {
         mapView.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        eventHandler?.stopTracking()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
