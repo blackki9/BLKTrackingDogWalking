@@ -174,24 +174,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSM-2l-QOX">
-                                <rect key="frame" x="198" y="143" width="205" height="95"/>
-                                <color key="backgroundColor" red="0.14094002019999999" green="0.63829385080000001" blue="0.08203125" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="3GE-hh-u0h"/>
-                                    <constraint firstAttribute="height" constant="95" id="hhs-QN-C6Y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Start track">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startTracking:" destination="b45-6h-eLt" eventType="touchUpInside" id="NEz-Vj-AnO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPh-3M-1Tg">
-                                <rect key="frame" x="198" y="246" width="205" height="95"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPh-3M-1Tg">
+                                <rect key="frame" x="198" y="157" width="205" height="95"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="Qf3-Xb-f5Y"/>
@@ -206,13 +190,30 @@
                                     <action selector="stopTracking:" destination="b45-6h-eLt" eventType="touchUpInside" id="BG8-i9-uEK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSM-2l-QOX">
+                                <rect key="frame" x="198" y="157" width="205" height="95"/>
+                                <color key="backgroundColor" red="0.14094002019999999" green="0.63829385080000001" blue="0.08203125" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="3GE-hh-u0h"/>
+                                    <constraint firstAttribute="height" constant="95" id="hhs-QN-C6Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Start track">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTracking:" destination="b45-6h-eLt" eventType="touchUpInside" id="NEz-Vj-AnO"/>
+                                </connections>
+                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzU-F1-rp3">
-                                <rect key="frame" x="16" y="375" width="568" height="211"/>
+                                <rect key="frame" x="16" y="282" width="568" height="304"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CzU-F1-rp3" firstAttribute="top" secondItem="dPh-3M-1Tg" secondAttribute="bottom" constant="34" id="DU9-qV-q6P"/>
+                            <constraint firstItem="dPh-3M-1Tg" firstAttribute="top" secondItem="usY-BX-GJQ" secondAttribute="bottom" constant="30" id="BCd-SJ-pJi"/>
+                            <constraint firstItem="CzU-F1-rp3" firstAttribute="top" secondItem="dPh-3M-1Tg" secondAttribute="bottom" constant="30" id="DU9-qV-q6P"/>
                             <constraint firstAttribute="centerX" secondItem="dPh-3M-1Tg" secondAttribute="centerX" id="DuB-z2-kTb"/>
                             <constraint firstItem="2ci-1z-pwp" firstAttribute="top" secondItem="EKu-TO-37A" secondAttribute="bottom" constant="8" id="Gap-Te-Khq"/>
                             <constraint firstItem="ypo-7w-Wjz" firstAttribute="top" secondItem="Pmd-MB-gcH" secondAttribute="bottom" constant="31" id="HIl-wN-yn6"/>
@@ -236,18 +237,23 @@
                             <constraint firstItem="CzU-F1-rp3" firstAttribute="top" secondItem="dPh-3M-1Tg" secondAttribute="bottom" constant="34" id="lLJ-ij-xCb"/>
                             <constraint firstItem="EKu-TO-37A" firstAttribute="leading" secondItem="mEP-vW-jNJ" secondAttribute="leading" constant="16" id="mYR-oN-0gD"/>
                             <constraint firstItem="mSM-2l-QOX" firstAttribute="top" secondItem="usY-BX-GJQ" secondAttribute="bottom" constant="16" id="mhs-N8-pm7"/>
+                            <constraint firstItem="mSM-2l-QOX" firstAttribute="top" secondItem="usY-BX-GJQ" secondAttribute="bottom" constant="30" id="oj4-of-SG4"/>
                             <constraint firstItem="oJo-9e-RZY" firstAttribute="top" secondItem="VWB-qi-ZjL" secondAttribute="bottom" constant="5" id="p7g-zI-Koa"/>
                             <constraint firstItem="Nh6-0G-cjX" firstAttribute="top" secondItem="CzU-F1-rp3" secondAttribute="bottom" constant="14" id="s2h-bs-uwl"/>
                             <constraint firstItem="VWB-qi-ZjL" firstAttribute="leading" secondItem="ypo-7w-Wjz" secondAttribute="trailing" constant="8" id="tKo-q3-Pyi"/>
+                            <constraint firstItem="CzU-F1-rp3" firstAttribute="top" secondItem="mSM-2l-QOX" secondAttribute="bottom" constant="30" id="yJ2-NG-j9w"/>
                             <constraint firstItem="oJo-9e-RZY" firstAttribute="leading" secondItem="EKu-TO-37A" secondAttribute="trailing" constant="8" id="zIh-Nf-e1l"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="p7g-zI-Koa"/>
                                 <exclude reference="X40-Om-sS8"/>
+                                <exclude reference="b9f-Qc-lGj"/>
                                 <exclude reference="aFm-1u-JDN"/>
+                                <exclude reference="mhs-N8-pm7"/>
                                 <exclude reference="cdH-PI-Zpu"/>
                                 <exclude reference="QRW-pA-Xi8"/>
+                                <exclude reference="lLJ-ij-xCb"/>
                             </mask>
                         </variation>
                     </view>
@@ -256,6 +262,8 @@
                         <outlet property="currentDistanceLabel" destination="oJo-9e-RZY" id="WI6-La-MOV"/>
                         <outlet property="currentTimeLabel" destination="usY-BX-GJQ" id="hXS-sC-DFr"/>
                         <outlet property="mapView" destination="CzU-F1-rp3" id="6WK-WK-UDJ"/>
+                        <outlet property="startButton" destination="mSM-2l-QOX" id="J55-i7-JDR"/>
+                        <outlet property="stopButton" destination="dPh-3M-1Tg" id="goQ-SR-aRY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeC-RT-WYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -416,16 +424,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6K-py-7zB">
+                                <rect key="frame" x="0.0" y="125" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="5LO-05-hMl"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="464130015.25441903">
+                                    <!--2015-09-16 21:00:15 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wIX-4A-Rd5" firstAttribute="leading" secondItem="KkC-12-U5j" secondAttribute="leading" constant="5" id="60A-tq-fUn"/>
+                            <constraint firstAttribute="trailing" secondItem="z6K-py-7zB" secondAttribute="trailing" id="9a6-dW-cGI"/>
                             <constraint firstItem="4Vp-RT-ou6" firstAttribute="top" secondItem="CjC-iY-wCq" secondAttribute="bottom" constant="17" id="Has-W4-YUd"/>
                             <constraint firstItem="9GX-PL-QC8" firstAttribute="top" secondItem="nIS-Uf-Uuh" secondAttribute="bottom" constant="7" id="PDX-fC-nVu"/>
                             <constraint firstItem="4Vp-RT-ou6" firstAttribute="leading" secondItem="KkC-12-U5j" secondAttribute="leading" constant="5" id="RBs-Om-hVo"/>
                             <constraint firstItem="wIX-4A-Rd5" firstAttribute="top" secondItem="4Vp-RT-ou6" secondAttribute="bottom" constant="17" id="W2W-GF-Wi7"/>
+                            <constraint firstItem="z6K-py-7zB" firstAttribute="top" secondItem="9GX-PL-QC8" secondAttribute="bottom" constant="24" id="f1S-Nw-xxe"/>
                             <constraint firstAttribute="trailing" secondItem="nIS-Uf-Uuh" secondAttribute="trailing" constant="16" id="h6l-RC-J3g"/>
                             <constraint firstAttribute="trailing" secondItem="9GX-PL-QC8" secondAttribute="trailing" constant="16" id="iVf-mi-5sX"/>
+                            <constraint firstItem="z6K-py-7zB" firstAttribute="leading" secondItem="KkC-12-U5j" secondAttribute="leading" id="lkL-qf-s1O"/>
                             <constraint firstItem="nIS-Uf-Uuh" firstAttribute="top" secondItem="CjC-iY-wCq" secondAttribute="bottom" constant="14" id="wgj-45-TwC"/>
                         </constraints>
                     </view>

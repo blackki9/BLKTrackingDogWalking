@@ -20,6 +20,8 @@ class NewTrackViewController: UIViewController {
     @IBOutlet var currentDistanceLabel: UILabel!
     @IBOutlet var currentTimeLabel: UILabel!
 
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
     var updatedUserPosition = false
 
     private var locations = [LocationShowItem]()
@@ -51,10 +53,14 @@ class NewTrackViewController: UIViewController {
     
     @IBAction func startTracking(sender: AnyObject) {
         locations.removeAll(keepCapacity: false)
+        startButton.hidden = true
+        stopButton.hidden = false
         eventHandler?.startTracking()
     }
     
     @IBAction func stopTracking(sender: AnyObject) {
+        startButton.hidden = false
+        stopButton.hidden = true
         eventHandler?.stopTracking()
     }
     
