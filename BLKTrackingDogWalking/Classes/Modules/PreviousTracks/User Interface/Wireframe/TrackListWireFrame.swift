@@ -45,8 +45,8 @@ class TrackListWireFrame: NSObject {
         settingsWireframe?.presentSettingsFromViewController(trackListViewController)
     }
     
-    func showTrackDetails() {
-        trackDetailsWireframe?.presentTrackDetailsFromViewController(trackListViewController!)
+    func showTrackDetails(details:TrackListItem) {
+        trackDetailsWireframe?.presentTrackDetailsFromViewController(trackListViewController!,trackItem:details)
     }
     
 }

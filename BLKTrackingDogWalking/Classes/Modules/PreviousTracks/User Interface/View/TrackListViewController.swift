@@ -21,7 +21,7 @@ class TrackListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.tracks = [TrackListItem(distance: "1000 m", time: "30 minutes", date: "28/08/2015")]
+        self.tracks = [TrackListItem]()
         self.tracksTableView.reloadData()
     }
     
@@ -77,6 +77,6 @@ extension TrackListViewController : UITableViewDataSource {
 
 extension TrackListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        eventHandler?.showTrackDetails()
+        eventHandler?.showTrackDetailsWithIndex(self.tracks![indexPath.row])
     }
 }

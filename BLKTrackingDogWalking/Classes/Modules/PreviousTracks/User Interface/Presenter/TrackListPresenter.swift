@@ -22,8 +22,7 @@ class TrackListPresenter: NSObject,TrackListModuleInterface {
         trackListWireframe?.addTrack()
     }
     
-    func showTrackDetails() {
-        trackListWireframe?.showTrackDetails()
+    func showTrackDetailsWithIndex(details:TrackListItem) {        trackListWireframe?.showTrackDetails(details)
     }
     
     func updateData() {

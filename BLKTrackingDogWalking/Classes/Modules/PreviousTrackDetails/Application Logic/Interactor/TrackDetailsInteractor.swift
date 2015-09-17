@@ -10,8 +10,13 @@ import UIKit
 
 class TrackDetailsInteractor: NSObject {
     var output:TrackDetailsInteractorOutput?
+    var trackDetails:TrackListItem?
 }
 
 extension TrackDetailsInteractor : TrackDetailsInteractorInput {
-    
+    func updateView() {
+        if let details = trackDetails {
+            output?.fillInfo(details)
+        }
+    }
 }

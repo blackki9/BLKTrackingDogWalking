@@ -19,7 +19,7 @@ class TimeFormatter: NSObject,Formatter {
             
             let result = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
             
-            return result//"\(hours):\(minutes):\(seconds)"
+            return result
         }
         
         return nil

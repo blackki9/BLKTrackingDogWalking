@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TrackDetailsModuleInterface {
-    
+    func updateView()
 }

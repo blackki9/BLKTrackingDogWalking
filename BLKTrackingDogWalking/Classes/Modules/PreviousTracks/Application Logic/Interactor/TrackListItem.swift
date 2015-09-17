@@ -12,10 +12,12 @@ struct TrackListItem {
     let distancePassed:String
     let timeElapsed:String
     let dateOfWalking:String
+    var locations:[LocationShowItem]?
     
-    init(distance:String,time:String,date:String) {
+    init(distance:String,time:String,date:String,locations:[LocationShowItem]?) {
         self.distancePassed = distance
         self.timeElapsed = time
         self.dateOfWalking = date
+        self.locations = locations
     }
 }

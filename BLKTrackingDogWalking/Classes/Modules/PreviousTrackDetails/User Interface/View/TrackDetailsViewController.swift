@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import MapKit
 
 class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
-
+    //MARK:- properties
     var eventHandler:TrackDetailsModuleInterface?
     static let storyboardId = "TrackDetailsViewInterface"
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var distanceLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    
+    //MARK:- UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Track details"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        eventHandler?.updateView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +35,17 @@ class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
         // Dispose of any resources that can be recreated.
     }
 }
-
+ //MARK:- view interface
 extension TrackDetailsViewController : TrackDetailsViewInterface {
+    func showDate(dateString:String) {
+        dateLabel.text = dateString
+    }
     
+    func showTime(timeString:String) {
+        timeLabel.text = timeString
+    }
+    
+    func showDistance(distanceString:String) {
+        distanceLabel.text = distanceString
+    }
 }
