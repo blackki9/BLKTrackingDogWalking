@@ -15,6 +15,8 @@
 		FD68ADE71BAABA330012D91D /* ManagedWalkingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADE61BAABA330012D91D /* ManagedWalkingTrack.swift */; };
 		FD68ADE91BAABA340012D91D /* ManagedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADE81BAABA340012D91D /* ManagedLocation.swift */; };
 		FD68ADED1BAAE9D30012D91D /* LocationShowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADEC1BAAE9D30012D91D /* LocationShowItem.swift */; };
+		FD68ADEF1BAAF3A30012D91D /* SuccessCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADEE1BAAF3A30012D91D /* SuccessCheckManager.swift */; };
+		FD68ADF11BAAF3B30012D91D /* SuccessCheckManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68ADF01BAAF3B30012D91D /* SuccessCheckManagerInterface.swift */; };
 		FD6EEA911B9F4424008E6774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6EEA901B9F4424008E6774 /* AppDelegate.swift */; };
 		FD6EEA961B9F4424008E6774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA941B9F4424008E6774 /* Main.storyboard */; };
 		FD6EEA981B9F4424008E6774 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6EEA971B9F4424008E6774 /* Images.xcassets */; };
@@ -92,6 +94,8 @@
 		FD68ADE81BAABA340012D91D /* ManagedLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
 		FD68ADEA1BAAD1FA0012D91D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		FD68ADEC1BAAE9D30012D91D /* LocationShowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationShowItem.swift; sourceTree = "<group>"; };
+		FD68ADEE1BAAF3A30012D91D /* SuccessCheckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessCheckManager.swift; sourceTree = "<group>"; };
+		FD68ADF01BAAF3B30012D91D /* SuccessCheckManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessCheckManagerInterface.swift; sourceTree = "<group>"; };
 		FD6EEA8B1B9F4424008E6774 /* BLKTrackingDogWalking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLKTrackingDogWalking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6EEA8F1B9F4424008E6774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6EEA901B9F4424008E6774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -700,6 +704,8 @@
 				FD68ADA71BA85ED50012D91D /* Formatters */,
 				FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */,
 				FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */,
+				FD68ADEE1BAAF3A30012D91D /* SuccessCheckManager.swift */,
+				FD68ADF01BAAF3B30012D91D /* SuccessCheckManagerInterface.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD68ADF11BAAF3B30012D91D /* SuccessCheckManagerInterface.swift in Sources */,
 				FD6EEAE11B9F57D6008E6774 /* TrackListViewController.swift in Sources */,
 				FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */,
 				FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */,
@@ -867,6 +874,7 @@
 				FDCDBB801BA1804F009AA5F3 /* TrackDetailsWireframe.swift in Sources */,
 				FD6EEAE91B9F5936008E6774 /* TrackListInterface.swift in Sources */,
 				FDCDBB661BA07B72009AA5F3 /* NewTrackDataManager.swift in Sources */,
+				FD68ADEF1BAAF3A30012D91D /* SuccessCheckManager.swift in Sources */,
 				FDCDBB681BA07B7F009AA5F3 /* NewTrackWireframe.swift in Sources */,
 				FDCDBB7C1BA1802A009AA5F3 /* TrackDetailsViewController.swift in Sources */,
 				FD6EEB061BA01733008E6774 /* SettingsInteractorOutput.swift in Sources */,

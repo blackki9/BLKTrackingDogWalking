@@ -61,7 +61,12 @@ extension NewTrackPresenter : NewTrackInteractorOutput {
         }
     }
     
+    func trackSucceeded(succeded:Bool, reason:String) {
+        viewInterface?.showAlertWithTitle("Track ended", message: reason)
+    }
+    
     func showNewLocation(longitude:Double,latitude:Double) {
-        
+        let locationShowItem = LocationShowItem(latitude:latitude,longitude:longitude)
+        viewInterface?.showNewLocation(locationShowItem)
     }
 }

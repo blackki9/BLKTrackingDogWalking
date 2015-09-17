@@ -20,10 +20,14 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
-        eventHandler?.fillInfo()
         distanceTextField.delegate = self
         timeField.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        eventHandler?.fillInfo()
     }
 
 }

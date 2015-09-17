@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class NewTrackInteractor: NSObject, NewTrackInteractorInput {
     var output:NewTrackInteractorOutput?
     var dataManager:NewTrackDataManager?
+    var successChecker:SuccessCheckManagerInterface?
     
     func startTracking() {
         output?.showDate(NSDate())
@@ -20,12 +22,20 @@ class NewTrackInteractor: NSObject, NewTrackInteractorInput {
             if let location = location {
                 self.output?.showNewLocation(location.longitude, latitude: location.latitude)
             }
-          
-               println("seconds : \(seconds) + meters : \(distance)")
         })
     }
     
     func stopTracking() {
+        
+        if let successChecker = successChecker,let dataManager = dataManager {
+            if successChecker.isTrackSucceededWithDistance(dataManager.currentDistance, time: dataManager.currentTime) {
+                output?.trackSucceeded(true, reason: "Congratulations! You reached your goal")
+            }
+            else {
+                output?.trackSucceeded(false, reason: "You didn't reach your day goal!")
+            }
+        }
+        
         dataManager?.stopNewTrack()
     }
     

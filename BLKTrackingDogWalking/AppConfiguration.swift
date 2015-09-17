@@ -15,7 +15,9 @@ class AppConfiguration {
     let dateFormatter = DateFormatter(formatString: "dd-MM-yyyy")
     let timeFormatter = TimeFormatter()
     let distanceFormatter = DistanceFormatter()
-    
+    let sucessChecker = SuccessCheckManager()
+    var settingsManager = SettingsManager(userDefaults: NSUserDefaults.standardUserDefaults())
+
     init() {
         configureDependencies()
     }
@@ -26,6 +28,8 @@ class AppConfiguration {
     
     func configureDependencies() {
         trackManager.initLocationManager()
+        
+        sucessChecker.settingsManager = settingsManager
         
         let dataStore = CoreDataStore()
         let rootWireframe = RootWireframe()
@@ -54,7 +58,7 @@ class AppConfiguration {
         let settingsInteractor = SettingsInteractor()
         settingsPresenter.interactor = settingsInteractor
         settingsInteractor.output = settingsPresenter
-        settingsInteractor.settingsManager = SettingsManager(userDefaults: NSUserDefaults.standardUserDefaults())
+        settingsInteractor.settingsManager = settingsManager
         
         //set up new track
         let newTrackPresenter = NewTrackPresenter()
@@ -66,6 +70,7 @@ class AppConfiguration {
         newTrackPresenter.distanceFormatter = distanceFormatter
         newTrackInteractor.output = newTrackPresenter
         let newTrackDataManager = NewTrackDataManager(dataStore: dataStore)
+        newTrackInteractor.successChecker = sucessChecker
         newTrackDataManager.tracksManager = trackManager
         newTrackInteractor.dataManager = newTrackDataManager
 
