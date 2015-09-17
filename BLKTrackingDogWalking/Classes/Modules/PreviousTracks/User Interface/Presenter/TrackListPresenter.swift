@@ -26,10 +26,15 @@ class TrackListPresenter: NSObject,TrackListModuleInterface {
         trackListWireframe?.showTrackDetails()
     }
     
+    func updateData() {
+        trackListInteractorInput?.findAllTracks()
+    }
+    
+    
 }
 
 extension TrackListPresenter : TrackListInteractorOutput {
-    func tracksFound([TrackListItem]) {
-        
+    func tracksFound(tracks:[TrackListItem]) {
+        userInterface?.tracksFound(tracks)
     }
 }

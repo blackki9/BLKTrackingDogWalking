@@ -43,6 +43,9 @@ class AppConfiguration {
         trackListPresenter.trackListWireframe = trackListWireframe
         let trackListInteractor = TrackListInteractor(dataManager: TracksDataManager(coreDataStore: dataStore))
         trackListInteractor.output = trackListPresenter
+        trackListInteractor.dateFormatter = dateFormatter
+        trackListInteractor.timeFormatter = timeFormatter
+        trackListInteractor.distanceFormatter = distanceFormatter
         trackListPresenter.trackListInteractorInput = trackListInteractor
         
         //set up settings

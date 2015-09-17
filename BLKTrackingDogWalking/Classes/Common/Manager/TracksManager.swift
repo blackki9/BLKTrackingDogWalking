@@ -15,12 +15,12 @@ class TracksManager: NSObject {
     let locationManager = CLLocationManager()
     var seconds:Int = 0
     var meters:Double = 0.0
-    var progressBlock:((seconds:Int,distance:Int) -> ())?
+    var progressBlock:((seconds:Int,distance:Int, location:CLLocation?) -> ())?
     
     func updateTime() {
         seconds++
         if let block = progressBlock {
-            block(seconds: seconds,distance:Int(meters))
+            block(seconds: seconds,distance:Int(meters),location:locations.last)
         }
     }
     
@@ -52,6 +52,14 @@ extension TracksManager : CLLocationManagerDelegate {
 
 extension TracksManager: TracksManagerInterface {
     
+    func isStopped() -> Bool {
+        if let valid =  timer?.valid {
+            return !valid
+        }
+        
+        return true
+    }
+    
     func allLocations() -> [Location] {
         return locations.map({ (object:CLLocation) -> Location in
             let newLocation = Location(longitude: object.coordinate.longitude, latitude: object.coordinate.latitude, timestamp: object.timestamp)
@@ -60,7 +68,7 @@ extension TracksManager: TracksManagerInterface {
         })
     }
     
-    func startTracking(progressBlock:((seconds:Int,distance:Int) -> ())?) {
+    func startTracking(progressBlock:((seconds:Int,distance:Int,location:CLLocation?) -> ())?) {
         seconds = 0
         meters = 0
         self.progressBlock = progressBlock

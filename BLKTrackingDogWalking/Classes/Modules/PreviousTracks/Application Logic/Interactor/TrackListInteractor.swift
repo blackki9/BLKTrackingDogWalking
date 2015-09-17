@@ -11,7 +11,9 @@ import UIKit
 class TrackListInteractor: NSObject,TrackListInteractorInput {
     var dataManager:TracksDataManager
     var output:TrackListInteractorOutput?
-    let dateFormatter = NSDateFormatter()
+    var dateFormatter:Formatter?
+    var timeFormatter:Formatter?
+    var distanceFormatter:Formatter?
     
     init(dataManager:TracksDataManager) {
         self.dataManager = dataManager
@@ -22,9 +24,9 @@ class TrackListInteractor: NSObject,TrackListInteractorInput {
     func findAllTracks() {
         dataManager.findAllTracksSorted {[weak self] (tracks:[WalkingTrack]) -> () in
             let convertedItems = tracks.map({(object:WalkingTrack) -> TrackListItem in
-                let distanceString = object.distanceInMeters?.description
-                let timeString = object.timeInMinutes?.description
-                let dateString = self?.dateFormatter.stringFromDate(object.date!)
+                let distanceString = self?.distanceFormatter?.format(Double(object.distanceInMeters!))
+                let timeString = self?.timeFormatter?.format(object.timeInSeconds!)
+                let dateString = self?.dateFormatter?.format(object.date!)
                 
                 return TrackListItem(distance:distanceString!, time: timeString!, date: dateString!)
             })

@@ -9,16 +9,17 @@
 import UIKit
 
 class CoreDataStore {
+    
+    let privateContext:NSManagedObjectContext
+    
     init() {
         MagicalRecord.setupCoreDataStack()
+        privateContext = NSManagedObjectContext.MR_context()
     }
     
     func fetchTracksWithPredicate(predicate:NSPredicate?,completion:(([ManagedWalkingTrack])->())?) {
-        let privateContext = NSManagedObjectContext.MR_context()
-        
-        // When using private contexts you must execute the core data code in it's private queue using performBlock: or performBlockAndWait:
         privateContext.performBlock { () -> Void in
-            let privateObjects:Array<NSManagedObject> = ManagedWalkingTrack.MR_findAllWithPredicate(predicate, inContext: privateContext) as! Array<NSManagedObject>
+            let privateObjects:Array<NSManagedObject> = ManagedWalkingTrack.MR_findAllWithPredicate(predicate, inContext: self.privateContext) as! Array<NSManagedObject>
 
             let privateObjectsIDs = privateObjects.map({ (object:NSManagedObject) -> NSManagedObjectID in
                 return object.objectID
@@ -34,13 +35,10 @@ class CoreDataStore {
         }
     }
     
-    func newWalkingTrack() -> ManagedWalkingTrack {
-        return ManagedWalkingTrack.MR_createEntity()
-    }
-    
-    func save() {
+    func update(block:(context:NSManagedObjectContext!)->()) {
         MagicalRecord.saveWithBlockAndWait { (context) -> Void in
-            context.save(nil)
+            block(context: context)
+            context.MR_saveToPersistentStoreAndWait()
         }
     }
     

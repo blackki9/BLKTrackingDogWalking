@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="ManagedLocation" representedClassName="PRODUCT_MODULE_NAME.ManagedLocation" syncable="YES">
+    <entity name="ManagedLocation" representedClassName="BLKTrackingDogWalking.ManagedLocation" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedWalkingTrack" inverseName="locations" inverseEntity="ManagedWalkingTrack" syncable="YES"/>
     </entity>
-    <entity name="ManagedWalkingTrack" representedClassName="PRODUCT_MODULE_NAME.ManagedWalkingTrack" syncable="YES">
+    <entity name="ManagedWalkingTrack" representedClassName="BLKTrackingDogWalking.ManagedWalkingTrack" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ManagedLocation" inverseName="track" inverseEntity="ManagedLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ManagedWalkingTrack" positionX="-245" positionY="-63" width="128" height="103"/>
-        <element name="ManagedLocation" positionX="-63" positionY="9" width="128" height="103"/>
+        <element name="ManagedLocation" positionX="-63" positionY="9" width="128" height="105"/>
+        <element name="ManagedWalkingTrack" positionX="-245" positionY="-63" width="128" height="105"/>
     </elements>
 </model>
