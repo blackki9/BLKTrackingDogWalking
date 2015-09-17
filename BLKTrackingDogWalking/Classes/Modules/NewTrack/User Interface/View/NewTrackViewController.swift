@@ -19,6 +19,9 @@ class NewTrackViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var currentDistanceLabel: UILabel!
     @IBOutlet var currentTimeLabel: UILabel!
+
+    var updatedUserPosition = false
+
     private var locations = [LocationShowItem]()
     
     @IBOutlet var currentDateLabel: UILabel!
@@ -81,10 +84,14 @@ extension NewTrackViewController : MKMapViewDelegate {
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
     }
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-        if let userLocation = mapView.userLocation {
-            let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, mapRegionBoneSize, mapRegionBoneSize)
-            mapView.setRegion(region, animated: true)
+        if !updatedUserPosition {
+            if let userLocation = mapView.userLocation {
+                let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, mapRegionBoneSize, mapRegionBoneSize)
+                mapView.setRegion(region, animated: true)
+                updatedUserPosition = true
+            }
         }
+   
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
