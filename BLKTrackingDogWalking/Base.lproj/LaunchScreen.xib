@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,28 +10,40 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dog walking" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-MN-aIo">
+                    <rect key="frame" x="0.0" y="44" width="480" height="436"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bic-8R-d4r">
+                    <rect key="frame" x="0.0" y="20" width="480" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="1fB-6W-w66"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Tracks" id="ewv-Yd-HTg">
+                            <barButtonItem key="leftBarButtonItem" title="Settings" width="10" id="csC-81-91Y">
+                                <inset key="imageInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="lmw-fX-FoO"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="0EL-06-7yI"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" id="VjN-cB-Cj4"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="2y5-MN-aIo" firstAttribute="top" secondItem="bic-8R-d4r" secondAttribute="bottom" id="Gpm-Ah-bhW"/>
+                <constraint firstAttribute="bottom" secondItem="2y5-MN-aIo" secondAttribute="bottom" id="Jwn-RG-nsA"/>
+                <constraint firstItem="bic-8R-d4r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="L4K-gP-mc8"/>
+                <constraint firstItem="bic-8R-d4r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WS5-oq-B93"/>
+                <constraint firstItem="2y5-MN-aIo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ecD-7e-w3H"/>
+                <constraint firstAttribute="trailing" secondItem="bic-8R-d4r" secondAttribute="trailing" id="hKu-QB-q2n"/>
+                <constraint firstItem="bic-8R-d4r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mIN-Ms-E1u"/>
+                <constraint firstAttribute="trailing" secondItem="2y5-MN-aIo" secondAttribute="trailing" id="qeN-da-5pG"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="5cJ-9S-tgC"/>
-                    <exclude reference="Koa-jz-hwk"/>
-                    <exclude reference="fvb-Df-36g"/>
+                    <exclude reference="WS5-oq-B93"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
