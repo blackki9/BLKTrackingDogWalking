@@ -52,6 +52,7 @@ class NewTrackViewController: UIViewController {
     @IBAction func stopTracking(sender: AnyObject) {
         eventHandler?.stopTracking()
     }
+    
 }
 
 //MARK:- MKMapViewDelegate

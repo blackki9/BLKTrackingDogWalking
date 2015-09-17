@@ -89,6 +89,7 @@
 		FD68ADAE1BA863E40012D91D /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FD68ADE61BAABA330012D91D /* ManagedWalkingTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWalkingTrack.swift; sourceTree = "<group>"; };
 		FD68ADE81BAABA340012D91D /* ManagedLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
+		FD68ADEA1BAAD1FA0012D91D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		FD6EEA8B1B9F4424008E6774 /* BLKTrackingDogWalking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLKTrackingDogWalking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6EEA8F1B9F4424008E6774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6EEA901B9F4424008E6774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		4817AAC7158E8EE86DB5DE41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD68ADEA1BAAD1FA0012D91D /* HealthKit.framework */,
 				FDCDBB911BA1935A009AA5F3 /* Foundation.framework */,
 				FDCDBB8F1BA19355009AA5F3 /* UIKit.framework */,
 				FDCDBB8D1BA1934E009AA5F3 /* CoreData.framework */,
