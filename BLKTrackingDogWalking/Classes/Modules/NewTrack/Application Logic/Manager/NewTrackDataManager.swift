@@ -38,7 +38,6 @@ class NewTrackDataManager: NSObject {
     })
 }
     func stopNewTrack() {
-
         if let stopped = tracksManager?.isStopped() {
             if !stopped {
                 saveData()

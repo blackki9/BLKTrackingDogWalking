@@ -23,6 +23,7 @@ class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Track details"
+        mapView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,6 +36,13 @@ class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
         // Dispose of any resources that can be recreated.
     }
 }
+
+//MARK:- MKMapViewDelegate
+
+extension TrackDetailsViewController:MKMapViewDelegate {
+    
+}
+
  //MARK:- view interface
 extension TrackDetailsViewController : TrackDetailsViewInterface {
     func showDate(dateString:String) {
