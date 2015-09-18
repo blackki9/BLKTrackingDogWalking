@@ -37,6 +37,8 @@ class NewTrackInteractor: NSObject, NewTrackInteractorInput {
         }
         
         dataManager?.stopNewTrack()
+        self.output?.showTime(dataManager!.currentTime)
+        self.output?.showDistance(Double(dataManager!.currentDistance))
     }
     
 }

@@ -21,9 +21,7 @@
                     </constraints>
                     <items>
                         <navigationItem title="Tracks" id="ewv-Yd-HTg">
-                            <barButtonItem key="leftBarButtonItem" title="Settings" width="10" id="csC-81-91Y">
-                                <inset key="imageInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </barButtonItem>
+                            <barButtonItem key="leftBarButtonItem" image="settingsIcon" id="csC-81-91Y"/>
                             <barButtonItem key="rightBarButtonItem" systemItem="add" id="lmw-fX-FoO"/>
                         </navigationItem>
                     </items>
@@ -49,4 +47,7 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="settingsIcon" width="25" height="25"/>
+    </resources>
 </document>
