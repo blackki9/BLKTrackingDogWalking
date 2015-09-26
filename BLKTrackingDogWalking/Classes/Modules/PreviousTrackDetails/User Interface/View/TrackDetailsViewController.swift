@@ -40,7 +40,19 @@ class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
 //MARK:- MKMapViewDelegate
 
 extension TrackDetailsViewController:MKMapViewDelegate {
-    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        //TODO:- change to guard
+        if !overlay.isKindOfClass(MKPolyline) {
+            return nil
+        }
+        let polyline = overlay as! MKPolyline
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        
+        renderer.lineWidth = 4.0
+        renderer.strokeColor = UIColor.blackColor()
+        
+        return renderer
+    }
 }
 
  //MARK:- view interface
@@ -55,5 +67,13 @@ extension TrackDetailsViewController : TrackDetailsViewInterface {
     
     func showDistance(distanceString:String) {
         distanceLabel.text = distanceString
+    }
+    
+    func showRegion(region:MKCoordinateRegion) {
+        mapView.region = region
+    }
+    
+    func showPath(path:MKPolyline) {
+        mapView.addOverlay(path)
     }
 }
