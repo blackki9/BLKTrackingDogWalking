@@ -7,10 +7,12 @@
 //
 
 import Foundation
-
+import MapKit
 
 protocol TrackDetailsViewInterface {
     func showDate(dateString:String)
     func showTime(timeString:String)
     func showDistance(distanceString:String)
+    func showRegion(region:MKCoordinateRegion)
+    func showPath(path:MKPolyline)
 }

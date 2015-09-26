@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class TrackDetailsPresenter: NSObject {
     var viewInterface:TrackDetailsViewInterface?
@@ -24,5 +25,52 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
         viewInterface?.showDate(details.dateOfWalking)
         viewInterface?.showDistance(details.distancePassed)
         viewInterface?.showTime(details.timeElapsed)
+        if let region = regionForDetails(details) {
+            viewInterface?.showRegion(region)
+        }
+        
+        if let path = pathForDetails(details) {
+            viewInterface?.showPath(path)
+        }
+    }
+    
+    func regionForDetails(details:TrackListItem) -> MKCoordinateRegion? {
+        if let locations = details.locations {
+            if locations.count > 0 {
+                let initialLoc = locations.first!
+                var minLatitude = initialLoc.latitude
+                var minLongitude = initialLoc.longitude
+                var maxLat = minLatitude
+                var maxLong = minLongitude
+                
+                for location in locations {
+                    minLatitude = min(minLatitude,location.latitude)
+                    minLongitude = min(minLongitude,location.longitude)
+                    maxLat = max(maxLat,location.latitude)
+                    maxLong = max(maxLong,location.longitude)
+                }
+                
+                return MKCoordinateRegion(center: CLLocationCoordinate2DMake((minLatitude + maxLat) / 2, (minLongitude + maxLong)/2), span: MKCoordinateSpanMake((maxLat - minLatitude)*1.1, (maxLong - minLongitude) * 1.1))
+            }
+        }
+        return nil
+    }
+    
+    func pathForDetails(details:TrackListItem) -> MKPolyline? {
+        if let locations = details.locations {
+            if locations.count > 0 {
+                var coords = [CLLocationCoordinate2D]()
+                
+                for location in locations {
+                    let coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                    coords.append(coordinate)
+                }
+                
+                return MKPolyline(coordinates: &coords, count: coords.count)
+            }
+        }
+        
+        
+        return nil
     }
 }
