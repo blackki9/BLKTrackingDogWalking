@@ -1047,6 +1047,7 @@
 			baseConfigurationReference = 7A00ED016420E07D7B5F4E03 /* Pods-BLKTrackingDogWalking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITRISE_SOURCE_DIR = BLKTrackingDogWalking;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BLKTrackingDogWalking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1061,6 +1062,7 @@
 			baseConfigurationReference = 197BFB4AEFDF1E046420B42A /* Pods-BLKTrackingDogWalking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITRISE_SOURCE_DIR = BLKTrackingDogWalking;
 				INFOPLIST_FILE = BLKTrackingDogWalking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
