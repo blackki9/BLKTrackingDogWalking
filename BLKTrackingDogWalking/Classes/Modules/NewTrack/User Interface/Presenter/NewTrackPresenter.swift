@@ -25,6 +25,15 @@ extension NewTrackPresenter : NewTrackModuleInterface {
     func stopTracking() {
         interactorInput?.stopTracking()
     }
+    
+    func updateView() {
+        if let formatter = dateFormatter {
+            let string = formatter.format(NSDate())
+            if let string = string {
+                viewInterface?.showDate(string)
+            }
+        }
+    }
 }
 
 extension NewTrackPresenter : NewTrackInteractorOutput {
@@ -46,7 +55,10 @@ extension NewTrackPresenter : NewTrackInteractorOutput {
                 viewInterface?.showDistance(string)
             }
         }
-        viewInterface?.showDistance("0 m")
+        else {
+            viewInterface?.showDistance("0 m")    
+        }
+        
     }
     
     func showDate(date:NSDate) {

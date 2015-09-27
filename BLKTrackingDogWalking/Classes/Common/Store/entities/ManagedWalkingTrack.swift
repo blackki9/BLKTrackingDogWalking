@@ -23,7 +23,7 @@ class ManagedWalkingTrack: NSManagedObject {
             managedLocation.latitude = NSNumber(double: location.latitude)
             managedLocation.longitude = NSNumber(double:location.longitude)
             managedLocation.timestamp = location.timestamp!
-            
+            managedLocation.track = self
             return managedLocation
         })
        addManagedLocations(managedLocations)

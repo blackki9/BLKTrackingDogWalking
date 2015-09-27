@@ -21,7 +21,15 @@ class TracksDataManager: NSObject {
                 if let completion = completion {
                     let convertedArray = tracks.map({(managedTrack:ManagedWalkingTrack) -> WalkingTrack in
                         let intValue = managedTrack.time.integerValue
-                        return WalkingTrack(distance: managedTrack.distance.integerValue, time:managedTrack.time.integerValue, date: managedTrack.date)
+                        let result =  WalkingTrack(distance: managedTrack.distance.integerValue, time:managedTrack.time.integerValue, date: managedTrack.date)
+                        result.locations = managedTrack.locations.array.map({(object : AnyObject) -> Location in
+                            let location = object as! ManagedLocation
+                            let result = Location(longitude: location.longitude.doubleValue, latitude: location.latitude.doubleValue, timestamp: location.timestamp)
+                            
+                            return result
+                        })
+                        
+                        return result
                     })
                     completion(convertedArray)
                 }

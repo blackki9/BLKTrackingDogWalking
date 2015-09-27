@@ -11,4 +11,5 @@ import UIKit
 protocol NewTrackModuleInterface {
     func startTracking()
     func stopTracking()
+    func updateView()
 }

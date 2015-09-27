@@ -34,6 +34,7 @@ class NewTrackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New track"
+        eventHandler?.updateView()
         mapView.showsUserLocation = true
         mapView.delegate = self
         // Do any additional setup after loading the view.
