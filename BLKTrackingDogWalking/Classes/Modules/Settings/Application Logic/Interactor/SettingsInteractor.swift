@@ -14,7 +14,7 @@ class SettingsInteractor: NSObject {
     
     func handleDistanceChange(distance:String) {
         //TODO:- add validator to distance
-        if let distanceNumber = distance.toInt() {
+        if let distanceNumber = Int(distance) {
             settingsManager?.distance = distanceNumber
             settingsManager?.saveSettings()
         }
@@ -25,7 +25,7 @@ class SettingsInteractor: NSObject {
     
     func handleTimeChange(time:String) {
         //TODO:- add validator to time
-        if let timeNumber = time.toInt() {
+        if let timeNumber = Int(time) {
             settingsManager?.time = timeNumber
             settingsManager?.saveSettings()
         }

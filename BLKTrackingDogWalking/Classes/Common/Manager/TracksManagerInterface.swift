@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol TracksManagerInterface {
-    func startTracking(((seconds:Int,distance:Int,location:CLLocation?) -> ())?)
+    func startTracking(_: ((seconds:Int,distance:Int,location:CLLocation?) -> ())?)
     func stopTracking()
     func isStopped() -> Bool
     func allLocations() -> [Location]

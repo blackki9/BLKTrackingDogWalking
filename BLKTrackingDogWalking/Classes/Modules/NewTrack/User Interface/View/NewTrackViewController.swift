@@ -87,20 +87,18 @@ class NewTrackViewController: UIViewController {
 //MARK:- MKMapViewDelegate
 
 extension NewTrackViewController : MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     }
-    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         if !updatedUserPosition {
-            if let userLocation = mapView.userLocation {
-                let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, mapRegionBoneSize, mapRegionBoneSize)
+                let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, mapRegionBoneSize, mapRegionBoneSize)
                 mapView.setRegion(region, animated: true)
                 updatedUserPosition = true
-            }
         }
    
     }
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
         
         //TODO:- change to guard
         if !overlay.isKindOfClass(MKPolyline) {

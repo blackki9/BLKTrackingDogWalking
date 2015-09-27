@@ -31,7 +31,7 @@ class ManagedWalkingTrack: NSManagedObject {
     
     private func addManagedLocations(managedLocations:[ManagedLocation]) {
         
-        var mutableLocations = self.locations.mutableCopy() as! NSMutableOrderedSet
+        let mutableLocations = self.locations.mutableCopy() as! NSMutableOrderedSet
         mutableLocations.addObjectsFromArray(managedLocations)
         self.locations = mutableLocations.copy() as! NSOrderedSet
     }

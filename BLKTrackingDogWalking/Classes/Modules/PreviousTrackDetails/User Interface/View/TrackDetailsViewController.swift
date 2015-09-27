@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
+class TrackDetailsViewController: UIViewController {
     //MARK:- properties
     var eventHandler:TrackDetailsModuleInterface?
     static let storyboardId = "TrackDetailsViewInterface"
@@ -40,7 +40,7 @@ class TrackDetailsViewController: UIViewController,TrackDetailsViewInterface {
 //MARK:- MKMapViewDelegate
 
 extension TrackDetailsViewController:MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
         //TODO:- change to guard
         if !overlay.isKindOfClass(MKPolyline) {
             return nil

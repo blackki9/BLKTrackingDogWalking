@@ -36,12 +36,12 @@ class TracksManager: NSObject {
 }
 
 extension TracksManager : CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let arrayOfLocations = locations as! [CLLocation]
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let arrayOfLocations = locations 
         for newLocation in arrayOfLocations {
             if newLocation.horizontalAccuracy < 20 {
-                if self.locations.count > 0 {
-                    meters += newLocation.distanceFromLocation(self.locations.last)
+                if let lastLocation = self.locations.last {
+                    meters += newLocation.distanceFromLocation(lastLocation)
                 }
                 
                 self.locations.append(newLocation)

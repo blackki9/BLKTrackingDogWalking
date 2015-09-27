@@ -35,9 +35,9 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController : UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == distanceTextField {
-            eventHandler?.handleDistanceChange(distanceTextField.text)
+            eventHandler?.handleDistanceChange(distanceTextField.text!)
         }
-        else if textField == timeField {            eventHandler?.handleTimeChange(timeField.text)
+        else if textField == timeField {            eventHandler?.handleTimeChange(timeField.text!)
         }
         
         textField.resignFirstResponder()

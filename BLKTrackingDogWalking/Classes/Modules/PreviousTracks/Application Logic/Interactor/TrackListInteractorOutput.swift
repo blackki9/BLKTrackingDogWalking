@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TrackListInteractorOutput {
-    func tracksFound([TrackListItem])
+    func tracksFound(_: [TrackListItem])
 }
 
 protocol TrackListInteractorInput {
