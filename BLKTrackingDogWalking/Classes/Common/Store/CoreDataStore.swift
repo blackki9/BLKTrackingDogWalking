@@ -42,4 +42,8 @@ class CoreDataStore {
         }
     }
     
+    func deleteItemByDate(date:NSDate) {
+        ManagedWalkingTrack.MR_deleteAllMatchingPredicate(NSPredicate(format: "date = %@", date))
+    }
+    
 }

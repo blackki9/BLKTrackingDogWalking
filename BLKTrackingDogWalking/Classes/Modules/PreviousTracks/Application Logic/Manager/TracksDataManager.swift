@@ -35,4 +35,8 @@ class TracksDataManager: NSObject {
             })
         }
     }
+    
+    func deleteTrackItem(item:WalkingTrack) {
+        dataStore?.deleteItemByDate(item.date!)
+    }
 }

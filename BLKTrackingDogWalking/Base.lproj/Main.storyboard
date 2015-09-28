@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Tracks-->
+        <!--Walks-->
         <scene sceneID="ccD-lZ-anH">
             <objects>
                 <viewController storyboardIdentifier="TrackListControllerId" id="p5d-fm-9xm" customClass="TrackListViewController" customModule="BLKTrackingDogWalking" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                             <constraint firstItem="8ra-Nn-KfQ" firstAttribute="top" secondItem="UlE-u6-xGF" secondAttribute="bottom" id="zSw-Rr-78D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tracks" id="iiB-rb-VRr">
+                    <navigationItem key="navigationItem" title="Walks" id="iiB-rb-VRr">
                         <barButtonItem key="leftBarButtonItem" image="settingsIcon" style="plain" id="Kxm-SG-mx4">
                             <connections>
                                 <action selector="showSettings:" destination="p5d-fm-9xm" id="MlS-Xu-Krd"/>
