@@ -14,6 +14,7 @@ class TrackListViewController: UIViewController {
     
     var eventHandler:TrackListModuleInterface?
     var tracks:[TrackListItem]?
+    
     @IBOutlet var tracksTableView: UITableView!
     
     //MARK:- UIViewController
@@ -78,5 +79,19 @@ extension TrackListViewController : UITableViewDataSource {
 extension TrackListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         eventHandler?.showTrackDetailsWithIndex(self.tracks![indexPath.row])
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let removedItem = tracks?.removeAtIndex(indexPath.row)
+            if let item = removedItem {
+                eventHandler?.deleteItem(item)
+            }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+        }
     }
 }

@@ -13,4 +13,5 @@ protocol TrackListModuleInterface {
     func addTrack()
     func showTrackDetailsWithIndex(details:TrackListItem) 
     func updateData()
+    func deleteItem(item:TrackListItem)
 }

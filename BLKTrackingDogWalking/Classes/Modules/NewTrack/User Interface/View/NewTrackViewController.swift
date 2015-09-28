@@ -33,7 +33,7 @@ class NewTrackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New track"
+        self.title = "Walk"
         eventHandler?.updateView()
         mapView.showsUserLocation = true
         mapView.delegate = self

@@ -15,7 +15,7 @@ class RootWireframe: NSObject {
         navigationController.viewControllers = [rootViewController]
     }
     
-    func navigationControllerFromWindow(window:UIWindow) -> UINavigationController {
+    private func navigationControllerFromWindow(window:UIWindow) -> UINavigationController {
         return window.rootViewController as! UINavigationController
     }
     
