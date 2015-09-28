@@ -29,6 +29,9 @@ class TrackListPresenter: NSObject,TrackListModuleInterface {
         trackListInteractorInput?.findAllTracks()
     }
     
+    func deleteItem(item: TrackListItem) {
+        
+    }
     
 }
 

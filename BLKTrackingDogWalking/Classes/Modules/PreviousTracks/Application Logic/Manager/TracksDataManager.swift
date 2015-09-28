@@ -20,7 +20,6 @@ class TracksDataManager: NSObject {
             dataStore.fetchTracksWithPredicate(nil, completion: { (tracks:[ManagedWalkingTrack]) -> () in
                 if let completion = completion {
                     let convertedArray = tracks.map({(managedTrack:ManagedWalkingTrack) -> WalkingTrack in
-                        let intValue = managedTrack.time.integerValue
                         let result =  WalkingTrack(distance: managedTrack.distance.integerValue, time:managedTrack.time.integerValue, date: managedTrack.date)
                         result.locations = managedTrack.locations.array.map({(object : AnyObject) -> Location in
                             let location = object as! ManagedLocation

@@ -27,7 +27,7 @@ class CoreDataStore {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let mainPredicate = NSPredicate(format: "self IN %@", privateObjectsIDs)
-                let finalResults = ManagedWalkingTrack.MR_findAllSortedBy("date", ascending: true, withPredicate: mainPredicate) as! [ManagedWalkingTrack]
+                let finalResults = ManagedWalkingTrack.MR_findAllSortedBy("date", ascending: false, withPredicate: mainPredicate) as! [ManagedWalkingTrack]
                 if let completionBlock = completion {
                     completionBlock(finalResults)
                 }
