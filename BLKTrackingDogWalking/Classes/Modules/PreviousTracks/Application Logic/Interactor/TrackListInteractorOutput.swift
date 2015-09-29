@@ -14,4 +14,5 @@ protocol TrackListInteractorOutput {
 
 protocol TrackListInteractorInput {
     func findAllTracks()
+    func deleteItem(item:TrackListItem)
 }

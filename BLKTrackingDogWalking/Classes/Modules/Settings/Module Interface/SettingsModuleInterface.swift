@@ -9,7 +9,9 @@
 import Foundation
 
 protocol SettingsModuleInterface {
-    func handleDistanceChange(distance:String)
-    func handleTimeChange(time:String)
+    func handleDistanceChange(row:Int)
+    func handleTimeChange(time:Int)
     func fillInfo()
+    func distanceCount() -> Int
+    func distanceValueForRow(row:Int) -> String
 }

@@ -8,16 +8,29 @@
 
 import UIKit
 
-struct TrackListItem {
+struct TrackListItem : Hashable, Equatable {
     let distancePassed:String
     let timeElapsed:String
     let dateOfWalking:String
-    var locations:[LocationShowItem]?
+    var locations = [LocationShowItem]()
+    var hashValue : Int {
+        get {
+           
+            
+            return dateOfWalking.hashValue
+        }
+    }
     
     init(distance:String,time:String,date:String,locations:[LocationShowItem]?) {
         self.distancePassed = distance
         self.timeElapsed = time
         self.dateOfWalking = date
-        self.locations = locations
+        if let newLocations = locations {
+            self.locations = newLocations
+        }
     }
+}
+
+func ==(lhs: TrackListItem, rhs: TrackListItem) -> Bool {
+    return lhs.distancePassed == rhs.distancePassed && lhs.dateOfWalking == rhs.dateOfWalking && lhs.timeElapsed == rhs.timeElapsed
 }

@@ -30,7 +30,7 @@ class TrackListPresenter: NSObject,TrackListModuleInterface {
     }
     
     func deleteItem(item: TrackListItem) {
-        
+        trackListInteractorInput?.deleteItem(item)
     }
     
 }

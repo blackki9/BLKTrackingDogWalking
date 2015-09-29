@@ -11,47 +11,65 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     var eventHandler:SettingsModuleInterface?
-
-    @IBOutlet var distanceTextField: UITextField!
-    @IBOutlet var timeField: UITextField!
     
+    @IBOutlet var timePicker: UIDatePicker!
+    @IBOutlet var distancePicker: UIPickerView!
     //MARK:- UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
-        distanceTextField.delegate = self
-        timeField.delegate = self
+        timePicker.addTarget(self, action: "timeChanged:", forControlEvents: .ValueChanged)
+        distancePicker.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func timeChanged(picker:UIDatePicker) {
+        let minutes = picker.countDownDuration / 60
+        eventHandler?.handleTimeChange(Int(minutes))
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         eventHandler?.fillInfo()
     }
-
 }
 
-extension SettingsViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == distanceTextField {
-            eventHandler?.handleDistanceChange(distanceTextField.text!)
-        }
-        else if textField == timeField {            eventHandler?.handleTimeChange(timeField.text!)
-        }
-        
-        textField.resignFirstResponder()
-        return true
+extension SettingsViewController : UIPickerViewDataSource {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if let handler = self.eventHandler {
+            return handler.distanceCount()
+        }
+        return 0
+    }
+}
+
+extension SettingsViewController : UIPickerViewDelegate {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let handler = eventHandler {
+            return handler.distanceValueForRow(row)
+        }
+        return nil
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        eventHandler?.handleDistanceChange(row)
+    }
+
 }
 
 extension SettingsViewController : SettingsViewInterface {
-    func showDistance(distance:String) {
-        distanceTextField.text = distance
+    func showDistance(row:Int) {
+        distancePicker.selectRow(row, inComponent: 0, animated: true)
     }
     
-    func showTime(time:String) {
-        timeField.text = time
+    func showTime(timeInterval:Int) {
+        timePicker.countDownDuration = NSTimeInterval(timeInterval * 60)
     }
     
     func showError(reason: String) {

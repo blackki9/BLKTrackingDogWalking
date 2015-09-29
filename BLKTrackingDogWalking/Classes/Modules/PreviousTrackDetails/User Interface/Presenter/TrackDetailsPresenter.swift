@@ -35,7 +35,7 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
     }
     
     func regionForDetails(details:TrackListItem) -> MKCoordinateRegion? {
-        if let locations = details.locations {
+         let locations = details.locations
             if locations.count > 0 {
                 let initialLoc = locations.first!
                 var minLatitude = initialLoc.latitude
@@ -52,12 +52,12 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
                 
                 return MKCoordinateRegion(center: CLLocationCoordinate2DMake((minLatitude + maxLat) / 2, (minLongitude + maxLong)/2), span: MKCoordinateSpanMake((maxLat - minLatitude)*1.1, (maxLong - minLongitude) * 1.1))
             }
-        }
+        
         return nil
     }
     
     func pathForDetails(details:TrackListItem) -> MKPolyline? {
-        if let locations = details.locations {
+         let locations = details.locations
             if locations.count > 0 {
                 var coords = [CLLocationCoordinate2D]()
                 
@@ -68,7 +68,6 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
                 
                 return MKPolyline(coordinates: &coords, count: coords.count)
             }
-        }
         
         
         return nil

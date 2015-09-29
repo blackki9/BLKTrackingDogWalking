@@ -11,30 +11,38 @@ import UIKit
 class SettingsPresenter: NSObject {
     var userInterface:SettingsViewInterface?
     var interactor:SettingsInteractor?
+    let distances = ["100","300", "500", "1000","1500","2000"]
 }
 
 extension SettingsPresenter : SettingsModuleInterface {
-    func handleDistanceChange(distance:String) {
-        interactor?.handleDistanceChange(distance)
+    func handleDistanceChange(row:Int) {
+        interactor?.handleDistanceChange(distances[row])
     }
     
-    func handleTimeChange(time:String) {
-        interactor?.handleTimeChange(time)
+    func handleTimeChange(time:Int) {
+        interactor?.handleTimeChange(time.description)
     }
     
     func fillInfo() {
         interactor?.fillInfo()
     }
 
+    func distanceCount() -> Int {
+        return distances.count
+    }
+    
+    func distanceValueForRow(row:Int) -> String {
+        return distances[row]
+    }
 }
 
 extension SettingsPresenter : SettingsInteractorOutput {
     func showDistance(distance:String) {
-        userInterface?.showDistance(distance)
+        userInterface?.showDistance(distances.indexOf(distance)!)
     }
     
     func showTime(time:String) {
-        userInterface?.showTime(time)
+        userInterface?.showTime(Int(time)!)
     }
     
     func showError(reason: String) {

@@ -43,7 +43,10 @@ class CoreDataStore {
     }
     
     func deleteItemByDate(date:NSDate) {
-        ManagedWalkingTrack.MR_deleteAllMatchingPredicate(NSPredicate(format: "date = %@", date))
+        MagicalRecord.saveWithBlock { (context) -> Void in
+            ManagedWalkingTrack.MR_deleteAllMatchingPredicate(NSPredicate(format: "date = %@", date), inContext: context)
+            context.MR_saveToPersistentStoreAndWait()
+        }
     }
     
 }

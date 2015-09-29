@@ -10,8 +10,8 @@ import Foundation
 
 protocol SettingsViewInterface {
     
-    func showDistance(distance:String)
-    func showTime(time:String)
+    func showDistance(row:Int)
+    func showTime(timeInterval:Int)
     func showError(reason:String)
     
 }

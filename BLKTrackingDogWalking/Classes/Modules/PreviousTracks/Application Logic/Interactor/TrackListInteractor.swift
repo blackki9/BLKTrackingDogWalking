@@ -14,6 +14,7 @@ class TrackListInteractor: NSObject,TrackListInteractorInput {
     var dateFormatter:Formatter?
     var timeFormatter:Formatter?
     var distanceFormatter:Formatter?
+    var savedTracksForPresentedTracks = [TrackListItem:WalkingTrack]()
     
     init(dataManager:TracksDataManager) {
         self.dataManager = dataManager
@@ -22,6 +23,7 @@ class TrackListInteractor: NSObject,TrackListInteractorInput {
     }
     
     func findAllTracks() {
+        savedTracksForPresentedTracks.removeAll()
         dataManager.findAllTracksSorted {[weak self] (tracks:[WalkingTrack]) -> () in
             let convertedItems = tracks.map({(object:WalkingTrack) -> TrackListItem in
                 let distanceString = self?.distanceFormatter?.format(Double(object.distanceInMeters!))
@@ -36,9 +38,17 @@ class TrackListInteractor: NSObject,TrackListInteractorInput {
                 
                 return result
             })
+            for (index,track) in tracks.enumerate() {
+                self?.savedTracksForPresentedTracks[convertedItems[index]] = track
+            }
             
             self?.output?.tracksFound(convertedItems)
         }
     }
     
+    func deleteItem(item: TrackListItem) {
+        if let itemForDelete = savedTracksForPresentedTracks[item] {
+            dataManager.deleteTrackItem(itemForDelete)
+        }
+    }
 }

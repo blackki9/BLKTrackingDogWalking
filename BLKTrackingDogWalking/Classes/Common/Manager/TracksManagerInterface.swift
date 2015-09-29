@@ -13,5 +13,4 @@ protocol TracksManagerInterface {
     func startTracking(_: ((seconds:Int,distance:Int,location:CLLocation?) -> ())?)
     func stopTracking()
     func isStopped() -> Bool
-    func allLocations() -> [Location]
 }

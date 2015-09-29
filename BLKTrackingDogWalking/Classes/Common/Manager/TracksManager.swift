@@ -60,14 +60,6 @@ extension TracksManager: TracksManagerInterface {
         return true
     }
     
-    func allLocations() -> [Location] {
-        return locations.map({ (object:CLLocation) -> Location in
-            let newLocation = Location(longitude: object.coordinate.longitude, latitude: object.coordinate.latitude, timestamp: object.timestamp)
-            
-            return newLocation
-        })
-    }
-    
     func startTracking(progressBlock:((seconds:Int,distance:Int,location:CLLocation?) -> ())?) {
         seconds = 0
         meters = 0

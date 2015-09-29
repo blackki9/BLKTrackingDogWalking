@@ -49,8 +49,8 @@ extension TrackDetailsViewController:MKMapViewDelegate {
         let renderer = MKPolylineRenderer(polyline: polyline)
         
         renderer.lineWidth = 4.0
-        renderer.strokeColor = UIColor.blackColor()
-        
+        renderer.strokeColor = UIColor.blueColor()
+
         return renderer
     }
 }
