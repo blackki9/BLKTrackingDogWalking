@@ -89,5 +89,6 @@ extension TracksManager: TracksManagerInterface {
         if let timer = timer {
             timer.invalidate()
         }
+        locations.removeAll()
     }
 }
