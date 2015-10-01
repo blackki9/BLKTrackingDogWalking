@@ -70,6 +70,7 @@
 		FDCDBB9A1BA19898009AA5F3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB991BA19898009AA5F3 /* Location.swift */; };
 		FDCDBB9D1BA1C4E2009AA5F3 /* TracksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */; };
 		FDCDBB9F1BA1C5EF009AA5F3 /* TracksManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */; };
+		FDCF532B1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF532A1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		FDCDBB991BA19898009AA5F3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManager.swift; sourceTree = "<group>"; };
 		FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManagerInterface.swift; sourceTree = "<group>"; };
+		FDCF532A1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListNoItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +428,7 @@
 				FD6EEAE01B9F57D6008E6774 /* TrackListViewController.swift */,
 				FD6EEAE81B9F5936008E6774 /* TrackListInterface.swift */,
 				FDCDBB4F1BA070D4009AA5F3 /* TrackListTableViewCell.swift */,
+				FDCF532A1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 			files = (
 				FD68ADF11BAAF3B30012D91D /* SuccessCheckManagerInterface.swift in Sources */,
 				FD6EEAE11B9F57D6008E6774 /* TrackListViewController.swift in Sources */,
+				FDCF532B1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift in Sources */,
 				FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */,
 				FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */,
 				FDCDBB781BA18007009AA5F3 /* TrackDetailsModuleInterface.swift in Sources */,

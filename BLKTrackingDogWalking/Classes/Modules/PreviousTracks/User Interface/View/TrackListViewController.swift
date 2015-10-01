@@ -22,7 +22,6 @@ class TrackListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.tracks = [TrackListItem]()
         self.tracksTableView.reloadData()
     }
     
@@ -47,7 +46,9 @@ class TrackListViewController: UIViewController {
 
 extension TrackListViewController : TrackListInterface {
     func tracksFound(tracks:[TrackListItem]) {
-        self.tracks = tracks
+        if tracks.count > 0 {
+            self.tracks = tracks
+        }
         tracksTableView.reloadData()
     }
 }
@@ -59,18 +60,26 @@ extension TrackListViewController : UITableViewDataSource {
         if let tracks = self.tracks {
             return tracks.count
         }
-        return 0;
+        return 1;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TrackListTableViewCell.cellId, forIndexPath: indexPath) as! TrackListTableViewCell
-        let track = tracks![indexPath.row]
         
-        cell.currentDateLabel.text = track.dateOfWalking
-        cell.currentDistanceLabel.text = track.distancePassed
-        cell.currentTimeLabel.text = track.timeElapsed
+        if let tracks = self.tracks {
+            let cell = tableView.dequeueReusableCellWithIdentifier(TrackListTableViewCell.cellId, forIndexPath: indexPath) as! TrackListTableViewCell
+            let track = tracks[indexPath.row]
+            
+            cell.currentDateLabel.text = track.dateOfWalking
+            cell.currentDistanceLabel.text = track.distancePassed
+            cell.currentTimeLabel.text = track.timeElapsed
+            
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(TrackListNoItemTableViewCell.reusableCellId, forIndexPath: indexPath)
         
         return cell
+       
     }
 }
 
@@ -78,11 +87,20 @@ extension TrackListViewController : UITableViewDataSource {
 
 extension TrackListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        eventHandler?.showTrackDetailsWithIndex(self.tracks![indexPath.row])
+        if let tracks = self.tracks {
+            eventHandler?.showTrackDetailsWithIndex(tracks[indexPath.row])
+        }
+        else {
+            eventHandler?.addTrack()
+        }
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if let _ = self.tracks {
+            return true
+        }
+
+        return false
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
