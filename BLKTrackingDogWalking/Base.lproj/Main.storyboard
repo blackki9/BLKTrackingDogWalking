@@ -278,9 +278,9 @@
                                 <exclude reference="b9f-Qc-lGj"/>
                                 <exclude reference="aFm-1u-JDN"/>
                                 <exclude reference="mhs-N8-pm7"/>
-                                <exclude reference="cdH-PI-Zpu"/>
                                 <exclude reference="QRW-pA-Xi8"/>
                                 <exclude reference="lLJ-ij-xCb"/>
+                                <exclude reference="cdH-PI-Zpu"/>
                             </mask>
                         </variation>
                     </view>

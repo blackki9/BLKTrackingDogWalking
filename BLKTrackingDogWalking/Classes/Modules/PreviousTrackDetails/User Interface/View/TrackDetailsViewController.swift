@@ -53,6 +53,24 @@ extension TrackDetailsViewController:MKMapViewDelegate {
 
         return renderer
     }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation.isKindOfClass(FlagAnnotation) else {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(FlagAnnotation.annotationViewId)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: FlagAnnotation.annotationViewId)
+        }
+        
+        annotationView?.image = FlagAnnotation.image
+        annotationView?.centerOffset = CGPointMake(10, -11)
+        annotationView?.canShowCallout = true
+        
+        return annotationView
+    }
 }
 
  //MARK:- view interface
@@ -75,5 +93,9 @@ extension TrackDetailsViewController : TrackDetailsViewInterface {
     
     func showPath(path:MKPolyline) {
         mapView.addOverlay(path)
+    }
+    
+    func showEndAndStartFlags(annotations:[MKAnnotation]) {
+        mapView.addAnnotations(annotations)
     }
 }

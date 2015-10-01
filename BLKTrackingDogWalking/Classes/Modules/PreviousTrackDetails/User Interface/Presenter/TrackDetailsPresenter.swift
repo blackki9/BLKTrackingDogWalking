@@ -32,6 +32,10 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
         if let path = pathForDetails(details) {
             viewInterface?.showPath(path)
         }
+        
+        if let flags = annotationsForEndsOfPathForDetails(details) {
+            viewInterface?.showEndAndStartFlags(flags)
+        }
     }
     
     func regionForDetails(details:TrackListItem) -> MKCoordinateRegion? {
@@ -57,18 +61,34 @@ extension TrackDetailsPresenter : TrackDetailsInteractorOutput {
     }
     
     func pathForDetails(details:TrackListItem) -> MKPolyline? {
-         let locations = details.locations
-            if locations.count > 0 {
-                var coords = [CLLocationCoordinate2D]()
+        let locations = details.locations
+        if locations.count > 0 {
+              var coords = [CLLocationCoordinate2D]()
                 
-                for location in locations {
-                    let coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
-                    coords.append(coordinate)
-                }
+              for location in locations {
+                let coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                 coords.append(coordinate)
+              }
                 
-                return MKPolyline(coordinates: &coords, count: coords.count)
-            }
+              return MKPolyline(coordinates: &coords, count: coords.count)
+        }
         
+        
+        return nil
+    }
+    
+    func annotationsForEndsOfPathForDetails(details:TrackListItem) -> [MKAnnotation]? {
+        
+        let locations = details.locations
+        if locations.count > 1 {
+            let firstCoordinate = CLLocationCoordinate2D(latitude: locations.first!.latitude, longitude: locations.first!.longitude)
+            let startAnnotation = FlagAnnotation(coordinate: firstCoordinate, title: "Start")
+            
+            let lastCoordinate = CLLocationCoordinate2D(latitude: locations.last!.latitude, longitude: locations.last!.longitude)
+            let endAnnotation = FlagAnnotation(coordinate: lastCoordinate, title: "End")
+            
+            return [startAnnotation,endAnnotation]
+        }
         
         return nil
     }

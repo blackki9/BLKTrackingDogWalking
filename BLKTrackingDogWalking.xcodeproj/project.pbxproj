@@ -71,6 +71,7 @@
 		FDCDBB9D1BA1C4E2009AA5F3 /* TracksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */; };
 		FDCDBB9F1BA1C5EF009AA5F3 /* TracksManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */; };
 		FDCF532B1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF532A1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		FDCF532D1BBD18500098131F /* FlagAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF532C1BBD18500098131F /* FlagAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		FDCDBB9C1BA1C4E2009AA5F3 /* TracksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManager.swift; sourceTree = "<group>"; };
 		FDCDBB9E1BA1C5EF009AA5F3 /* TracksManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksManagerInterface.swift; sourceTree = "<group>"; };
 		FDCF532A1BBD0A1D0098131F /* TrackListNoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListNoItemTableViewCell.swift; sourceTree = "<group>"; };
+		FDCF532C1BBD18500098131F /* FlagAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -689,6 +691,7 @@
 			children = (
 				FDCDBB7B1BA1802A009AA5F3 /* TrackDetailsViewController.swift */,
 				FDCDBB7D1BA1803C009AA5F3 /* TrackDetailsViewInterface.swift */,
+				FDCF532C1BBD18500098131F /* FlagAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -877,6 +880,7 @@
 				FD68ADAD1BA862A50012D91D /* TimeFormatter.swift in Sources */,
 				FDCDBB741BA17FE6009AA5F3 /* TrackDetailsInteractor.swift in Sources */,
 				FDCDBB781BA18007009AA5F3 /* TrackDetailsModuleInterface.swift in Sources */,
+				FDCF532D1BBD18500098131F /* FlagAnnotation.swift in Sources */,
 				FDCDBB801BA1804F009AA5F3 /* TrackDetailsWireframe.swift in Sources */,
 				FD6EEAE91B9F5936008E6774 /* TrackListInterface.swift in Sources */,
 				FDCDBB661BA07B72009AA5F3 /* NewTrackDataManager.swift in Sources */,

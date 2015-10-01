@@ -15,4 +15,5 @@ protocol TrackDetailsViewInterface {
     func showDistance(distanceString:String)
     func showRegion(region:MKCoordinateRegion)
     func showPath(path:MKPolyline)
+    func showEndAndStartFlags(annotations:[MKAnnotation])
 }
